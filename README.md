@@ -1,5 +1,3 @@
-"# SyncedHealth Web Application" 
-
 # cortisense-webapp
 Frontend application for CortiSense - Web Apps Construction Management Platform.
 This project is built with [Vue](https://vuejs.org/) and follows **Domain-Driven Design (DDD)** principles to ensure a scalable, maintainable architecture tailored to the needs of the construction business.
