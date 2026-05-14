@@ -12,21 +12,67 @@ const store  = useIamStore();
 const collapsed = ref(false);
 
 const allItems = [
-  { key: 'dashboard',    label: 'nav.dashboard',    icon: 'pi-th-large',     to: '/app/dashboard',    roles: ['admin', 'doctor'] },
-  { key: 'patients',     label: 'nav.patients',     icon: 'pi-users',        to: '/app/patients',     roles: ['admin', 'doctor'] },
-  { key: 'appointments', label: 'nav.appointments', icon: 'pi-calendar',     to: '/app/appointments', roles: ['admin', 'doctor'] },
-  { key: 'reports',      label: 'nav.reports',      icon: 'pi-chart-bar',    to: '/app/reports',      roles: ['admin', 'doctor'] },
-  { key: 'settings',     label: 'nav.settings',     icon: 'pi-cog',          to: '/app/settings',     roles: ['admin'] },
+  {
+    key: 'dashboard',
+    label: 'nav.dashboard',
+    icon: 'pi-th-large',
+    to: '/app/dashboard',
+    roles: ['admin', 'doctor']
+  },
+  {
+    key: 'biometrics',
+    label: 'nav.biometrics',
+    icon: 'pi-heart',
+    to: '/app/cra/biometrics',
+    roles: ['admin', 'doctor']
+  },
+  {
+    key: 'devices',
+    label: 'nav.devices',
+    icon: 'pi-mobile',
+    to: '/app/cra/devices',
+    roles: ['admin', 'doctor']
+  },
+  {
+    key: 'patients',
+    label: 'nav.patients',
+    icon: 'pi-users',
+    to: '/app/patients',
+    roles: ['admin', 'doctor']
+  },
+  {
+    key: 'appointments',
+    label: 'nav.appointments',
+    icon: 'pi-calendar',
+    to: '/app/appointments',
+    roles: ['admin', 'doctor']
+  },
+  {
+    key: 'reports',
+    label: 'nav.reports',
+    icon: 'pi-chart-bar',
+    to: '/app/reports',
+    roles: ['admin', 'doctor']
+  },
+  {
+    key: 'settings',
+    label: 'nav.settings',
+    icon: 'pi-cog',
+    to: '/app/settings',
+    roles: ['admin']
+  },
 ];
 
 const menuItems = computed(() =>
     allItems.filter(i => i.roles.includes(store.currentUser?.role))
 );
 
-const isActive = (to) => route.path.startsWith(to);
+const isActive = (to) => route.path === to || route.path.startsWith(`${to}/`);
 
 function navigate(to) {
-  router.push(to);
+  if (route.path !== to) {
+    router.push(to);
+  }
 }
 
 function logout() {

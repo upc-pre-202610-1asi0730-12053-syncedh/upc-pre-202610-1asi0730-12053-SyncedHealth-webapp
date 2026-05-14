@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 // Importaciones ajustadas a la estructura de Interfaces
 import { authenticationGuard } from './iam/presentation/router/authentication.guard.js';
 import iamRoutes from './iam/presentation/router/iam-routes.js';
+import craRoutes from './cra/presentation/router/cra-routes.js';
 
 // Eagerly loaded
 import Landing from './shared/presentation/views/landing.vue';
@@ -30,7 +31,7 @@ const routes = [
     },
     {
         path: '/iam',
-        children: iamRoutes, // Esto registrará /login y /register
+        children: iamRoutes,
     },
     {
         path: '/unauthorized',
@@ -39,9 +40,9 @@ const routes = [
         meta: { title: 'Access Restricted' },
     },
 
-    // RUTAS PROTEGIDAS (Dentro del Layout con Sidebar)
+    // RUTAS PROTEGIDAS
     {
-        path: '/app', // Es mejor darles un prefijo o dejarlas en la raíz si la Landing es distinta
+        path: '/app',
         component: AppLayout,
         meta: { requiresAuth: true },
         children: [
@@ -51,33 +52,48 @@ const routes = [
                 component: Dashboard,
                 meta: { title: 'Dashboard', roles: ['admin', 'doctor'] },
             },
+
+            ...craRoutes,
+
             {
                 path: 'patients',
                 name: 'patients',
                 component: Patients,
-                meta: { title: 'Patients', roles: ['admin', 'doctor'],
-                    placeholder: { icon: 'pi-users', label: 'Patients' } },
+                meta: {
+                    title: 'Patients',
+                    roles: ['admin', 'doctor'],
+                    placeholder: { icon: 'pi-users', label: 'Patients' },
+                },
             },
             {
                 path: 'appointments',
                 name: 'appointments',
                 component: Appointments,
-                meta: { title: 'Appointments', roles: ['admin', 'doctor'],
-                    placeholder: { icon: 'pi-calendar', label: 'Appointments' } },
+                meta: {
+                    title: 'Appointments',
+                    roles: ['admin', 'doctor'],
+                    placeholder: { icon: 'pi-calendar', label: 'Appointments' },
+                },
             },
             {
                 path: 'reports',
                 name: 'reports',
                 component: Reports,
-                meta: { title: 'Reports', roles: ['admin', 'doctor'],
-                    placeholder: { icon: 'pi-chart-bar', label: 'Reports' } },
+                meta: {
+                    title: 'Reports',
+                    roles: ['admin', 'doctor'],
+                    placeholder: { icon: 'pi-chart-bar', label: 'Reports' },
+                },
             },
             {
                 path: 'settings',
                 name: 'settings',
                 component: Settings,
-                meta: { title: 'Settings', roles: ['admin'],
-                    placeholder: { icon: 'pi-cog', label: 'Settings' } },
+                meta: {
+                    title: 'Settings',
+                    roles: ['admin'],
+                    placeholder: { icon: 'pi-cog', label: 'Settings' },
+                },
             },
         ],
     },
@@ -92,7 +108,7 @@ const routes = [
 ];
 
 const router = createRouter({
-    history: createWebHistory(), // URLs más limpias para producción
+    history: createWebHistory(),
     routes,
     scrollBehavior: () => ({ top: 0 }),
 });
@@ -101,11 +117,9 @@ const router = createRouter({
  * Global Navigation Guard
  */
 router.beforeEach((to, from, next) => {
-    // 1. Manejo del Título
     const baseTitle = 'CortiSense';
     document.title = to.meta.title ? `${baseTitle} · ${to.meta.title}` : baseTitle;
 
-    // 2. Ejecución del Guard de Autenticación
     authenticationGuard(to, from, next);
 });
 
