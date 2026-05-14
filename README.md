@@ -22,7 +22,7 @@ cortisense-webapp/
 ├── proxy.conf.json         # Angular dev proxy — forwards /api/v1 to json-server
 ├── src/
 │   ├── app/
-│   │   ├──          /      # 
+│   │   ├── iam/            # 
 │   │   └── shared/         # Reusable components, directives, and pipes across domains
 │   └── environments/       # Environment variables (development, production)
 ```

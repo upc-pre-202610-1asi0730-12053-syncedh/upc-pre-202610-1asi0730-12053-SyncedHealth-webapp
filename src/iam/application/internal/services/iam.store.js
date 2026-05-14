@@ -13,6 +13,9 @@ export const useIamStore = defineStore('iam', () => {
     const loading = ref(false);
 
     const isAuthenticated = computed(() => currentUser.value !== null);
+    const isAdmin  = computed(() => currentUser.value?.role === 'admin');
+    const isDoctor = computed(() => currentUser.value?.role === 'doctor');
+
 
     function restoreSession() {
         const raw = localStorage.getItem(SESSION_KEY);

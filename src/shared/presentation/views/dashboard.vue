@@ -4,7 +4,7 @@ import { useI18n } from 'vue-i18n';
 import useIamStore from '../../../iam/application/internal/services/iam.store.js';
 
 const { t } = useI18n();
-const store = useIamStore();
+const store = useIamStore;
 
 const greeting = computed(() => {
   const h = new Date().getHours();

@@ -52,7 +52,7 @@ async function handleSubmit() {
   );
 
   const ok = await store.signUp(cmd);
-  if (ok) router.push('/dashboard');
+  if (ok) router.push('/app/dashboard');
 }
 </script>
 

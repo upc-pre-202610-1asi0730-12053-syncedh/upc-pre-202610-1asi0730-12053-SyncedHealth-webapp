@@ -29,6 +29,26 @@
       "specialty": "Cardiology",
       "token": "mock-token-1778776271831",
       "id": "yNv7a0d"
+    },
+    {
+      "firstName": "Kurogumo",
+      "lastName": "Shirakumo",
+      "email": "krgmshrkm@gmail.com",
+      "password": "krgmshrkm",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778777188322",
+      "id": "vD-gmFO"
+    },
+    {
+      "firstName": "Camilo",
+      "lastName": "Sesto",
+      "email": "camilosesto@hotmail.com",
+      "password": "camilosesto",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778777299074",
+      "id": "BHf_crk"
     }
   ]
 }
