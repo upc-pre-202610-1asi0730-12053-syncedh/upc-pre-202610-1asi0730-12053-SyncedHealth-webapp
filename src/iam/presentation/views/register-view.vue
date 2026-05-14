@@ -4,6 +4,7 @@ import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import useIamStore from '../../application/internal/services/iam.store.js';
 import { SignUpCommand } from '../../domain/model/commands/sign-up.command.js';
+import LanguageSwitcher from "../../../shared/presentation/components/language-switcher.vue";
 
 const { t } = useI18n();
 const router = useRouter();
@@ -21,8 +22,8 @@ const form = ref({
 const touched = ref(false);
 
 const roles = computed(() => [
-  { label: t('auth.role_admin'), value: 'admin' },
-  { label: t('auth.role_doctor'), value: 'doctor' },
+  { label: t('auth.role_admin') || 'Health Admin', value: 'admin' },
+  { label: t('auth.role_doctor') || 'Medical Staff', value: 'doctor' },
 ]);
 
 const errors = computed(() => {
@@ -52,21 +53,27 @@ async function handleSubmit() {
   );
 
   const ok = await store.signUp(cmd);
-  if (ok) router.push('/app/dashboard');
+  if (ok) await router.push('/app/dashboard');
 }
 </script>
 
 <template>
   <div class="auth-shell">
-    <!-- Brand panel -->
     <aside class="auth-brand">
       <div class="brand-inner">
         <div class="brand-logo">
           <span class="logo-icon">✦</span>
           <span class="logo-text">CortiSense</span>
         </div>
-        <h2 class="brand-headline">Join thousands<br/>of clinicians<br/>already inside.</h2>
-        <p class="brand-sub">Set up your account in under two minutes. No credit card required.</p>
+        <h2 class="brand-headline">
+          {{ t('register.brand_headline_1') || 'Empowering the' }}<br/>
+          {{ t('register.brand_headline_2') || 'heartbeat of' }}<br/>
+          {{ t('register.brand_headline_3') || 'healthcare.' }}
+        </h2>
+        <p class="brand-sub">
+          {{ t('register.brand_subtitle') || 'Join a platform designed to monitor wellness and optimize performance for medical professionals.' }}
+        </p>
+
         <div class="brand-decor" aria-hidden="true">
           <div class="decor-ring ring-1"></div>
           <div class="decor-ring ring-2"></div>
@@ -74,12 +81,12 @@ async function handleSubmit() {
       </div>
     </aside>
 
-    <!-- Form panel -->
     <main class="auth-form-panel">
       <div class="auth-form-card">
+        <language-switcher />
         <div class="form-header">
-          <h1>{{ t('auth.create_account') }}</h1>
-          <p class="text-muted">{{ t('auth.register_subtitle') }}</p>
+          <h1>{{ t('register.create_account') || 'Create Account' }}</h1>
+          <p class="text-muted">{{ t('register.subtitle') || 'Start monitoring your health and shifts today.' }}</p>
         </div>
 
         <form class="auth-form" @submit.prevent="handleSubmit" novalidate>
@@ -110,7 +117,7 @@ async function handleSubmit() {
                   :class="['role-card', { active: form.role === r.value }]"
               >
                 <input type="radio" :value="r.value" v-model="form.role" class="sr-only" />
-                <i :class="r.value === 'admin' ? 'pi pi-shield' : 'pi pi-heart'" class="role-icon"></i>
+                <i :class="r.value === 'admin' ? 'pi pi-shield' : 'pi pi-user'" class="role-icon"></i>
                 <span>{{ r.label }}</span>
               </label>
             </div>
@@ -118,8 +125,8 @@ async function handleSubmit() {
           </div>
 
           <div v-if="form.role === 'doctor'" class="field-group">
-            <label>{{ t('auth.specialty') }}</label>
-            <input v-model="form.specialty" type="text" class="ms-input" placeholder="e.g. Cardiology" />
+            <label>{{ t('auth.specialty') || 'Medical Specialty' }}</label>
+            <input v-model="form.specialty" type="text" class="ms-input" placeholder="e.g. Intensive Care" />
           </div>
 
           <div class="field-group">
@@ -136,7 +143,7 @@ async function handleSubmit() {
 
           <button type="submit" class="ms-btn-primary" :disabled="store.loading">
             <span v-if="store.loading" class="btn-spinner"></span>
-            {{ store.loading ? t('auth.registering') : t('auth.register') }}
+            <span>{{ store.loading ? t('auth.registering') : t('auth.register') }}</span>
           </button>
         </form>
 
@@ -152,6 +159,7 @@ async function handleSubmit() {
 <style scoped>
 .auth-shell { display: flex; min-height: 100vh; }
 
+/* Brand Panel - Coherente con Login */
 .auth-brand {
   position: relative;
   width: 40%;
@@ -164,14 +172,14 @@ async function handleSubmit() {
 @media (max-width: 800px) { .auth-brand { display: none; } }
 
 .brand-inner { position: relative; z-index: 2; }
-
 .brand-logo { display: flex; align-items: center; gap: .6rem; margin-bottom: 3rem; }
 .logo-icon { font-size: 1.6rem; color: var(--ms-primary-light); }
 .logo-text { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: #fff; }
 
-.brand-headline { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: #fff; line-height: 1.2; margin-bottom: 1rem; }
-.brand-sub { color: var(--ms-sidebar-text); font-size: .92rem; max-width: 280px; }
+.brand-headline { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: #fff; line-height: 1.1; margin-bottom: 1.5rem; }
+.brand-sub { color: #a0aec0; font-size: .95rem; line-height: 1.6; max-width: 300px; }
 
+/* Decorative Pulse */
 .brand-decor { position: absolute; top: 0; right: -80px; bottom: 0; pointer-events: none; z-index: 1; }
 .decor-ring { position: absolute; border-radius: 50%; border: 1px solid rgba(20,168,168,.2); }
 .ring-1 { width: 420px; height: 420px; top: 10%; right: -100px; }
@@ -211,6 +219,7 @@ async function handleSubmit() {
 .role-card.active { border-color: var(--ms-primary); background: rgba(13,110,110,.06); color: var(--ms-primary); }
 .role-icon { font-size: 1.25rem; }
 
+/* Button */
 .ms-btn-primary {
   height: 46px; background: var(--ms-primary); color: #fff; border: none; border-radius: 8px;
   font-family: inherit; font-size: .9rem; font-weight: 600; cursor: pointer;

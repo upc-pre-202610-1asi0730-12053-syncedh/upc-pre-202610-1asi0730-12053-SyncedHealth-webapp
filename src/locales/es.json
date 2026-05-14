@@ -86,7 +86,12 @@
     "demo": "Credenciales de demostración"
   },
   "register": {
-
+    "brand_headline_1": "Empoderando a",
+    "brand_headline_2": "el corazón de",
+    "brand_headline_3": "la atención médica.",
+    "brand_subtitle": "Únete a una plataforma diseñada para monitorear el bienestar y optimizar el rendimiento de los profesionales médicos.",
+    "create_account": "Crear cuenta",
+    "subtitle": "Empieza a controlar tu salud y tus turnos hoy mismo."
   },
   "roles": {
     "admin": "Administrador",

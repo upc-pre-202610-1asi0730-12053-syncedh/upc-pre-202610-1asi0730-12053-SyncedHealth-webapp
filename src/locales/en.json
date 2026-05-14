@@ -86,7 +86,12 @@
     "demo": "Demo Credentials"
   },
   "register": {
-
+    "brand_headline_1": "Empowering the",
+    "brand_headline_2": "heartbeat of",
+    "brand_headline_3": "healthcare.",
+    "brand_subtitle": "Join a platform designed to monitor wellness and optimize performance for medical professionals.",
+    "create_account": "Create Account",
+    "subtitle": "Start monitoring your health and shifts today."
   },
   "roles": {
     "admin": "Administrator",
