@@ -71,7 +71,7 @@ const useIamStore = defineStore('iam', () => {
      * Simulates signing in with email + password.
      * Resolves to true on success, false on failure.
      *
-     * @param {import('../domain/model/commands.js').SignInCommand} command
+     * @param {import('../domain/model/commands/sign-in.command.js').SignInCommand} command
      * @returns {Promise<boolean>}
      */
     async function signIn(command) {
@@ -102,7 +102,7 @@ const useIamStore = defineStore('iam', () => {
      * Simulates registering a new user.
      * Resolves to true on success.
      *
-     * @param {import('../domain/model/commands.js').SignUpCommand} command
+     * @param {import('../domain/model/commands/sign-up.js').SignUpCommand} command
      * @returns {Promise<boolean>}
      */
     async function signUp(command) {
