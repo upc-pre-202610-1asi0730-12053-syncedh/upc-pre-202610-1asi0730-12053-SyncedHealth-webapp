@@ -63,7 +63,7 @@ async function handleSubmit() {
       <div class="brand-inner">
         <div class="brand-logo">
           <span class="logo-icon">✦</span>
-          <span class="logo-text">MediSync</span>
+          <span class="logo-text">CortiSense</span>
         </div>
         <h2 class="brand-headline">Join thousands<br/>of clinicians<br/>already inside.</h2>
         <p class="brand-sub">Set up your account in under two minutes. No credit card required.</p>
