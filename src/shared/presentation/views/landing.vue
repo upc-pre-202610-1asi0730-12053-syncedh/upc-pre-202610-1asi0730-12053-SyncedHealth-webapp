@@ -21,7 +21,7 @@ function goToDashboard() {
     <nav class="landing-nav">
       <div class="nav-brand">
         <span class="logo-icon">✦</span>
-        <span class="logo-text">MediSync</span>
+        <span class="logo-text">CortiSense</span>
       </div>
       <div class="nav-actions">
         <router-link to="/iam/login" class="nav-link">{{ t('auth.login') }}</router-link>
