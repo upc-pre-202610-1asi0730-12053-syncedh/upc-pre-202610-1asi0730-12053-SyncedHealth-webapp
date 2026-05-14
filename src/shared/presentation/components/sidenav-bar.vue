@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRouter, useRoute } from 'vue-router';
-import useIamStore from '../../../iam/application/iam.store.js';
+import useIamStore from '../../../iam/application/internal/services/iam.store.js';
 
 const { t }  = useI18n();
 const router = useRouter();

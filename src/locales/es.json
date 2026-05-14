@@ -1,0 +1,91 @@
+{
+  "app": {
+    "name": "MediSync",
+    "tagline": "Plataforma de Gestión Clínica"
+  },
+  "nav": {
+    "home": "Inicio",
+    "dashboard": "Panel",
+    "patients": "Pacientes",
+    "appointments": "Citas",
+    "reports": "Informes",
+    "settings": "Configuración",
+    "profile": "Mi Perfil",
+    "logout": "Cerrar Sesión"
+  },
+  "auth": {
+    "login": "Iniciar Sesión",
+    "register": "Crear Cuenta",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirm_password": "Confirmar contraseña",
+    "first_name": "Nombre",
+    "last_name": "Apellido",
+    "role": "Rol",
+    "role_admin": "Administrador",
+    "role_doctor": "Médico",
+    "specialty": "Especialidad",
+    "remember_me": "Recordarme",
+    "forgot_password": "¿Olvidaste tu contraseña?",
+    "no_account": "¿No tienes cuenta?",
+    "have_account": "¿Ya tienes cuenta?",
+    "sign_up": "Regístrate",
+    "sign_in": "Inicia sesión",
+    "logging_in": "Iniciando sesión…",
+    "registering": "Creando cuenta…",
+    "welcome_back": "Bienvenido de vuelta",
+    "create_account": "Crea tu cuenta",
+    "login_subtitle": "Inicia sesión para acceder a la plataforma MediSync",
+    "register_subtitle": "Únete a MediSync para gestionar tu práctica clínica",
+    "errors": {
+      "invalid_credentials": "Correo o contraseña incorrectos.",
+      "email_required": "El correo es obligatorio.",
+      "password_required": "La contraseña es obligatoria.",
+      "password_mismatch": "Las contraseñas no coinciden.",
+      "name_required": "El nombre es obligatorio.",
+      "role_required": "Por favor selecciona un rol."
+    }
+  },
+  "home": {
+    "hero_title": "Tus pacientes,\ntu práctica,\nen un solo lugar.",
+    "hero_subtitle": "MediSync integra agendamiento, historiales e informes en un único espacio clínico.",
+    "cta_primary": "Comenzar",
+    "cta_secondary": "Saber más",
+    "feature_1_title": "Historiales Unificados",
+    "feature_1_desc": "Accede al historial completo, laboratorios y notas en una sola línea de tiempo.",
+    "feature_2_title": "Agenda Inteligente",
+    "feature_2_desc": "Gestiona citas con detección de conflictos y recordatorios automáticos.",
+    "feature_3_title": "Informes Clínicos",
+    "feature_3_desc": "Genera notas SOAP, cartas de derivación y analíticas con un clic.",
+    "stats_patients": "Pacientes gestionados",
+    "stats_doctors": "Médicos registrados",
+    "stats_uptime": "Disponibilidad de plataforma"
+  },
+  "dashboard": {
+    "title": "Panel",
+    "welcome": "Buen {time}, {name}",
+    "today_appointments": "Citas de Hoy",
+    "total_patients": "Total de Pacientes",
+    "pending_reports": "Informes Pendientes",
+    "recent_activity": "Actividad Reciente"
+  },
+  "roles": {
+    "admin": "Administrador",
+    "doctor": "Médico"
+  },
+  "common": {
+    "loading": "Cargando…",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "back": "Volver",
+    "or": "o"
+  },
+  "errors": {
+    "not_found": "Página no encontrada",
+    "not_found_desc": "La ruta {path} no existe.",
+    "go_home": "Volver al Inicio",
+    "unauthorized": "Acceso Restringido",
+    "unauthorized_desc": "No tienes permiso para ver esta página."
+  }
+}

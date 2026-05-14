@@ -5,7 +5,7 @@
       "firstName": "Ana",
       "lastName": "García",
       "email": "admin@medisync.com",
-      "password": "admin123password",
+      "password": "medisync2026",
       "role": "admin",
       "specialty": "",
       "token": "mock-token-admin-001"
@@ -15,10 +15,20 @@
       "firstName": "Carlos",
       "lastName": "Mendoza",
       "email": "doctor@medisync.com",
-      "password": "doctor456password",
+      "password": "medisync2026",
       "role": "doctor",
       "specialty": "Cardiology",
       "token": "mock-token-doctor-002"
+    },
+    {
+      "firstName": "Rosa",
+      "lastName": "Calloapaza",
+      "email": "dulcerosi2012@gmail.com",
+      "password": "rosi1234",
+      "role": "doctor",
+      "specialty": "Cardiology",
+      "token": "mock-token-1778776271831",
+      "id": "yNv7a0d"
     }
   ]
 }

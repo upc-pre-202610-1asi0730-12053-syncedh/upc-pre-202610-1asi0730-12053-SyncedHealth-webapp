@@ -1,5 +1,5 @@
 <script setup>
-import SidebarNav from './sidebar-nav.vue';
+import SidebarNav from './sidenav-bar.vue';
 import AppHeader from './app-header.vue';
 </script>
 

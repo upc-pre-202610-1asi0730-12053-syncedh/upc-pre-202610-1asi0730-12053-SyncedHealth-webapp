@@ -24,7 +24,7 @@ async function handleSubmit() {
 
   const ok = await store.signIn(new SignInCommand(email.value, password.value));
   if (ok) {
-    const redirect = route.query.redirect || '/dashboard';
+    const redirect = route.query.redirect || '/app/dashboard';
     await router.push(redirect);
   }
 }
@@ -37,7 +37,7 @@ async function handleSubmit() {
       <div class="brand-inner">
         <div class="brand-logo">
           <span class="logo-icon">✦</span>
-          <span class="logo-text">MediSync</span>
+          <span class="logo-text">CortiSense</span>
         </div>
         <h2 class="brand-headline">Clinical care,<br/>beautifully organised.</h2>
         <p class="brand-sub">The unified workspace for modern medical teams.</p>

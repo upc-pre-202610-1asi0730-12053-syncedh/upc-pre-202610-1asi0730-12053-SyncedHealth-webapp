@@ -1,7 +1,8 @@
 <script setup>
 import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
-import useIamStore from "../../../iam/application/iam.store.js";
+import useIamStore from "../../../iam/application/internal/services/iam.store.js";
+
 
 
 const { t } = useI18n();
