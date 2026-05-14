@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "firstName": "Ana",
+      "lastName": "García",
+      "email": "admin@medisync.com",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-admin-001"
+    },
+    {
+      "id": "2",
+      "firstName": "Carlos",
+      "lastName": "Mendoza",
+      "email": "doctor@medisync.com",
+      "role": "doctor",
+      "specialty": "Cardiology",
+      "token": "mock-token-doctor-002"
+    }
+  ]
+}

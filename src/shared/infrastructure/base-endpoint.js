@@ -15,7 +15,7 @@ export class BaseEndpoint {
 
     /** @returns {Promise<import('axios').AxiosResponse>} HTTP response with resource collection. */
     getAll() {
-        return this.http.get(this.endpointPath);
+        return this.http.get(`${this.endpointPath}`);
     }
 
     /**
@@ -31,7 +31,7 @@ export class BaseEndpoint {
      * @returns {Promise<import('axios').AxiosResponse>} HTTP response with created resource.
      */
     create(resource) {
-        return this.http.post(this.endpointPath, resource);
+        return this.http.post(`${this.endpointPath}`, resource);
     }
 
     /**
