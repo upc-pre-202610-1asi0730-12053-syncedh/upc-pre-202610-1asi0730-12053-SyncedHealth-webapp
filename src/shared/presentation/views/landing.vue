@@ -119,7 +119,7 @@ function goToDashboard() {
 
     <!-- Footer -->
     <footer class="landing-footer">
-      <span>© 2026 MediSync · All rights reserved</span>
+      <span>© 2026 CortiSense · All rights reserved</span>
     </footer>
   </div>
 </template>

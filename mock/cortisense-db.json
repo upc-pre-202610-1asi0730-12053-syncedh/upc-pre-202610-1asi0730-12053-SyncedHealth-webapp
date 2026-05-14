@@ -50,5 +50,41 @@
       "token": "mock-token-1778777299074",
       "id": "BHf_crk"
     }
+  ],
+  "shifts": [
+    {
+      "id": "1",
+      "userId": "1",
+      "startTime": "08:00",
+      "endTime": "16:00",
+      "area": "Emergency",
+      "status": "active"
+    },
+    {
+      "id": "2",
+      "userId": "1",
+      "startTime": "20:00",
+      "endTime": "04:00",
+      "area": "ICU",
+      "status": "scheduled"
+    }
+  ],
+  "biometric_alerts": [
+    {
+      "id": "1",
+      "userId": "1",
+      "type": "High Stress",
+      "value": "95 bpm / High Cortisol",
+      "timestamp": "10:15 AM",
+      "severity": "critical"
+    },
+    {
+      "id": "2",
+      "userId": "1",
+      "type": "Rest Suggestion",
+      "value": "Break recommended",
+      "timestamp": "12:00 PM",
+      "severity": "warning"
+    }
   ]
 }

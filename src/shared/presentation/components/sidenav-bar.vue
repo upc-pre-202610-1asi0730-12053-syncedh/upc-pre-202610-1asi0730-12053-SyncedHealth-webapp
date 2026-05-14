@@ -12,11 +12,11 @@ const store  = useIamStore();
 const collapsed = ref(false);
 
 const allItems = [
-  { key: 'dashboard',    label: 'nav.dashboard',    icon: 'pi-th-large',     to: '/dashboard',    roles: ['admin', 'doctor'] },
-  { key: 'patients',     label: 'nav.patients',     icon: 'pi-users',        to: '/patients',     roles: ['admin', 'doctor'] },
-  { key: 'appointments', label: 'nav.appointments', icon: 'pi-calendar',     to: '/appointments', roles: ['admin', 'doctor'] },
-  { key: 'reports',      label: 'nav.reports',      icon: 'pi-chart-bar',    to: '/reports',      roles: ['admin', 'doctor'] },
-  { key: 'settings',     label: 'nav.settings',     icon: 'pi-cog',          to: '/settings',     roles: ['admin'] },
+  { key: 'dashboard',    label: 'nav.dashboard',    icon: 'pi-th-large',     to: '/app/dashboard',    roles: ['admin', 'doctor'] },
+  { key: 'patients',     label: 'nav.patients',     icon: 'pi-users',        to: '/app/patients',     roles: ['admin', 'doctor'] },
+  { key: 'appointments', label: 'nav.appointments', icon: 'pi-calendar',     to: '/app/appointments', roles: ['admin', 'doctor'] },
+  { key: 'reports',      label: 'nav.reports',      icon: 'pi-chart-bar',    to: '/app/reports',      roles: ['admin', 'doctor'] },
+  { key: 'settings',     label: 'nav.settings',     icon: 'pi-cog',          to: '/app/settings',     roles: ['admin'] },
 ];
 
 const menuItems = computed(() =>

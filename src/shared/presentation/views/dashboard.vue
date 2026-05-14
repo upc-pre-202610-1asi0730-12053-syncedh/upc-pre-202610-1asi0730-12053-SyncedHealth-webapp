@@ -4,7 +4,7 @@ import { useI18n } from 'vue-i18n';
 import useIamStore from '../../../iam/application/internal/services/iam.store.js';
 
 const { t } = useI18n();
-const store = useIamStore;
+const store = useIamStore();
 
 const greeting = computed(() => {
   const h = new Date().getHours();
@@ -16,33 +16,32 @@ const greeting = computed(() => {
 const stats = computed(() => {
   if (store.isAdmin) {
     return [
-      { icon: 'pi-users',       label: t('dashboard.total_patients'),       value: '1,248', trend: '+12%', up: true  },
-      { icon: 'pi-calendar',    label: t('dashboard.today_appointments'),   value: '34',    trend: '+5%',  up: true  },
-      { icon: 'pi-chart-line',  label: t('dashboard.pending_reports'),      value: '8',     trend: '-3%',  up: false },
-      { icon: 'pi-user-plus',   label: 'New doctors this month',            value: '3',     trend: '+1',   up: true  },
+      { icon: 'pi-users',       label: 'Staff Monitored',       value: '142',   trend: 'Active', up: true  },
+      { icon: 'pi-exclamation-triangle', label: 'Critical Alerts', value: '3',     trend: '+1',     up: false },
+      { icon: 'pi-clock',       label: 'Active Shifts',         value: '24',    trend: 'Normal', up: true  },
+      { icon: 'pi-heart-fill',  label: 'Avg. Stress Index',     value: '42%',   trend: '-5%',    up: true  },
     ];
   }
   return [
-    { icon: 'pi-calendar',   label: t('dashboard.today_appointments'),  value: '6',   trend: '2 urgent', up: false },
-    { icon: 'pi-users',      label: 'My patients',                      value: '84',  trend: '+2 today', up: true  },
-    { icon: 'pi-file-edit',  label: t('dashboard.pending_reports'),     value: '3',   trend: 'Due today', up: false },
-    { icon: 'pi-heart',      label: 'Avg satisfaction',                 value: '4.8', trend: '★★★★★',     up: true  },
+    { icon: 'pi-heart',      label: 'Current BPM',              value: '78',    trend: 'Stable', up: true  },
+    { icon: 'pi-bolt',       label: 'Stress Level (HRV)',       value: 'Low',   trend: 'Optimal',up: true  },
+    { icon: 'pi-moon',       label: 'Sleep Recovery',           value: '84%',   trend: '+10%',   up: true  },
+    { icon: 'pi-clock',      label: 'Shift Hours Today',        value: '6.5h',  trend: '1.5h left', up: false },
   ];
 });
 
-const appointments = [
-  { time: '09:00', name: 'María López',   reason: 'Follow-up',      status: 'confirmed' },
-  { time: '10:30', name: 'José Ramírez',  reason: 'New patient',    status: 'pending'   },
-  { time: '11:00', name: 'Ana Flores',    reason: 'Lab review',     status: 'confirmed' },
-  { time: '14:00', name: 'Luis Torres',   reason: 'Consultation',   status: 'confirmed' },
-  { time: '15:30', name: 'Rosa Medina',   reason: 'Post-surgery',   status: 'urgent'    },
+const shifts = [
+  { time: '08:00', type: 'Duty Start',    area: 'Emergency Room',   status: 'completed' },
+  { time: '12:00', type: 'Mandatory Rest',area: 'Staff Lounge',     status: 'active'    },
+  { time: '14:00', type: 'Consultation',  area: 'Outpatient',       status: 'pending'   },
+  { time: '18:00', type: 'Shift End',     area: 'Check-out',        status: 'scheduled' },
 ];
 
-const activity = [
-  { icon: 'pi-user-plus', text: 'New patient registered', time: '2m ago',  color: 'green'  },
-  { icon: 'pi-file-edit', text: 'Report #4821 updated',   time: '18m ago', color: 'blue'   },
-  { icon: 'pi-calendar',  text: 'Appointment rescheduled', time: '1h ago', color: 'yellow' },
-  { icon: 'pi-check',     text: 'Lab results received',   time: '2h ago',  color: 'green'  },
+const biometricAlerts = [
+  { icon: 'pi-exclamation-circle', text: 'High Cortisol detected',    time: '5m ago',  color: 'red'    },
+  { icon: 'pi-info-circle',        text: 'Hydration reminder',        time: '45m ago', color: 'blue'   },
+  { icon: 'pi-check-circle',       text: 'Rest period validated',     time: '2h ago',  color: 'green'  },
+  { icon: 'pi-heart',              text: 'Heart rate spike during ICU',time: '4h ago', color: 'yellow' },
 ];
 </script>
 
@@ -50,14 +49,13 @@ const activity = [
   <div class="dashboard">
     <div class="dash-header">
       <div>
-        <h1>{{ t('dashboard.title') }}</h1>
+        <h1>{{ t('dashboard.title') || 'Health Monitor Dashboard' }}</h1>
         <p class="text-muted">Good {{ greeting }}, {{ store.currentUser?.firstName }}
-          <span class="role-chip">{{ store.isAdmin ? t('roles.admin') : t('roles.doctor') }}</span>
+          <span class="role-chip">{{ store.isAdmin ? 'System Admin' : 'Medical Staff' }}</span>
         </p>
       </div>
     </div>
 
-    <!-- Stats grid -->
     <div class="stats-grid">
       <div v-for="s in stats" :key="s.label" class="stat-card">
         <div class="stat-top">
@@ -72,34 +70,31 @@ const activity = [
       </div>
     </div>
 
-    <!-- Two column layout -->
     <div class="dash-grid">
-      <!-- Appointments -->
       <div class="card-ms">
         <div class="card-title">
-          <i class="pi pi-calendar"></i>
-          {{ t('dashboard.today_appointments') }}
+          <i class="pi pi-calendar-times"></i>
+          Today's Shift Schedule
         </div>
         <div class="appt-list">
-          <div v-for="a in appointments" :key="a.time" class="appt-row">
-            <span class="appt-time">{{ a.time }}</span>
+          <div v-for="s in shifts" :key="s.time" class="appt-row">
+            <span class="appt-time">{{ s.time }}</span>
             <div class="appt-info">
-              <strong>{{ a.name }}</strong>
-              <span class="appt-reason">{{ a.reason }}</span>
+              <strong>{{ s.type }}</strong>
+              <span class="appt-reason">{{ s.area }}</span>
             </div>
-            <span :class="['appt-status', `status-${a.status}`]">{{ a.status }}</span>
+            <span :class="['appt-status', `status-${s.status}`]">{{ s.status }}</span>
           </div>
         </div>
       </div>
 
-      <!-- Activity -->
       <div class="card-ms">
         <div class="card-title">
-          <i class="pi pi-bolt"></i>
-          {{ t('dashboard.recent_activity') }}
+          <i class="pi pi-activity"></i>
+          Biometric Notifications
         </div>
         <div class="activity-list">
-          <div v-for="a in activity" :key="a.text" class="activity-row">
+          <div v-for="a in biometricAlerts" :key="a.text" class="activity-row">
             <div :class="['act-icon', `act-${a.color}`]"><i :class="['pi', a.icon]"></i></div>
             <div class="act-body">
               <span>{{ a.text }}</span>
@@ -110,17 +105,16 @@ const activity = [
       </div>
     </div>
 
-    <!-- Admin-only panel -->
     <div v-if="store.isAdmin" class="card-ms admin-panel">
       <div class="card-title">
         <i class="pi pi-shield"></i>
-        Administrator Tools
+        Staff Management Tools
       </div>
       <div class="admin-tools">
-        <div class="admin-tool-btn"><i class="pi pi-users"></i> Manage Users</div>
-        <div class="admin-tool-btn"><i class="pi pi-cog"></i> System Settings</div>
-        <div class="admin-tool-btn"><i class="pi pi-chart-bar"></i> Analytics</div>
-        <div class="admin-tool-btn"><i class="pi pi-server"></i> Audit Logs</div>
+        <div class="admin-tool-btn"><i class="pi pi-users"></i> Staff Directory</div>
+        <div class="admin-tool-btn"><i class="pi pi-map"></i> Shift Rotation</div>
+        <div class="admin-tool-btn"><i class="pi pi-chart-bar"></i> Health Analytics</div>
+        <div class="admin-tool-btn"><i class="pi pi-history"></i> Biometric Logs</div>
       </div>
     </div>
   </div>
@@ -128,9 +122,8 @@ const activity = [
 
 <style scoped>
 .dashboard { padding: 2rem; max-width: 1100px; }
-
 .dash-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.75rem; }
-.dash-header h1 { font-size: 1.5rem; margin-bottom: .25rem; }
+.dash-header h1 { font-size: 1.5rem; margin-bottom: .25rem; font-family: 'DM Serif Display', serif; }
 .role-chip {
   display: inline-block; margin-left: .5rem;
   padding: .15rem .6rem; background: rgba(13,110,110,.1); color: var(--ms-primary);
@@ -138,9 +131,7 @@ const activity = [
 }
 
 /* Stats */
-.stats-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.5rem;
-}
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
 @media (max-width: 900px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
 
 .stat-card {
@@ -155,37 +146,38 @@ const activity = [
 .stat-value { font-size: 1.75rem; font-weight: 700; font-family: 'DM Serif Display', serif; color: var(--ms-text); margin-bottom: .2rem; }
 .stat-label { font-size: .78rem; color: var(--ms-text-muted); }
 
-/* Dash grid */
+/* Grid */
 .dash-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 1rem; margin-bottom: 1rem; }
 @media (max-width: 768px) { .dash-grid { grid-template-columns: 1fr; } }
-.card-title { display: flex; align-items: center; gap: .5rem; font-weight: 600; font-size: .92rem; margin-bottom: 1rem; color: var(--ms-text); }
-.card-title .pi { color: var(--ms-primary); }
+.card-ms { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; }
+.card-title { display: flex; align-items: center; gap: .5rem; font-weight: 600; font-size: .92rem; margin-bottom: 1rem; }
 
-/* Appointments */
-.appt-list { display: flex; flex-direction: column; gap: .5rem; }
-.appt-row { display: flex; align-items: center; gap: .75rem; padding: .6rem .75rem; border-radius: 8px; background: var(--ms-surface-2); }
-.appt-time { font-size: .78rem; font-weight: 700; color: var(--ms-text-muted); width: 40px; flex-shrink: 0; }
+/* List Rows */
+.appt-row { display: flex; align-items: center; gap: .75rem; padding: .6rem .75rem; border-radius: 8px; background: #f8fafc; margin-bottom: .5rem; }
+.appt-time { font-size: .78rem; font-weight: 700; color: #64748b; width: 45px; }
 .appt-info { flex: 1; display: flex; flex-direction: column; }
 .appt-info strong { font-size: .88rem; }
 .appt-reason { font-size: .75rem; color: var(--ms-text-muted); }
 .appt-status { font-size: .7rem; font-weight: 600; text-transform: uppercase; padding: .2rem .55rem; border-radius: 5px; }
-.status-confirmed { background: rgba(61,190,120,.12); color: var(--ms-success); }
-.status-pending   { background: rgba(240,165,0,.12);  color: var(--ms-accent); }
-.status-urgent    { background: rgba(224,82,82,.12);  color: var(--ms-danger); }
 
-/* Activity */
+/* Status Colors */
+.status-completed { background: #dcfce7; color: #166534; }
+.status-active    { background: #dbeafe; color: #1e40af; }
+.status-pending   { background: #fef3c7; color: #92400e; }
+.status-scheduled { background: #f1f5f9; color: #475569; }
+
+/* Alerts */
 .activity-list { display: flex; flex-direction: column; gap: .75rem; }
-.activity-row { display: flex; align-items: flex-start; gap: .75rem; }
-.act-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: .85rem; flex-shrink: 0; }
-.act-green  { background: rgba(61,190,120,.12); color: var(--ms-success); }
-.act-blue   { background: rgba(13,110,110,.12); color: var(--ms-primary); }
-.act-yellow { background: rgba(240,165,0,.12);  color: var(--ms-accent); }
-.act-body { display: flex; flex-direction: column; }
-.act-body span:first-child { font-size: .85rem; }
-.act-time { font-size: .75rem; color: var(--ms-text-muted); }
+.activity-row { display: flex; align-items: flex-start; gap: .75rem; margin-bottom: .75rem; }
+.act-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.act-green  { background: #dcfce7; color: #166534; }
+.act-red    { background: #fee2e2; color: #991b1b; }
+.act-blue   { background: #dbeafe; color: #1e40af; }
+.act-yellow { background: #fef3c7; color: #92400e; }
+.act-body { display: flex; flex-direction: column; font-size: .85rem; }
+.act-time { font-size: .75rem; color: #94a3b8; }
 
-/* Admin panel */
-.admin-panel { }
+/* Admin */
 .admin-tools { display: flex; gap: .75rem; flex-wrap: wrap; }
 .admin-tool-btn {
   display: flex; align-items: center; gap: .5rem;
