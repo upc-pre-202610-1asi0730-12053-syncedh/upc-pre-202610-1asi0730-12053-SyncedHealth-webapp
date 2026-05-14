@@ -40,7 +40,7 @@ function logout() {
     <!-- Logo -->
     <div class="sidebar-logo">
       <span class="logo-icon">✦</span>
-      <span v-if="!collapsed" class="logo-text">MediSync</span>
+      <span v-if="!collapsed" class="logo-text">CortiSense</span>
       <button class="collapse-btn" @click="collapsed = !collapsed" :title="collapsed ? 'Expand' : 'Collapse'">
         <i :class="['pi', collapsed ? 'pi-chevron-right' : 'pi-chevron-left']"></i>
       </button>
