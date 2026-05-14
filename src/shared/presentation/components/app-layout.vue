@@ -5,11 +5,15 @@ import AppHeader from './app-header.vue';
 
 <template>
   <div class="app-shell">
-    <sidebar-nav />
+    <SidebarNav />
+
     <div class="app-main">
-      <app-header />
+      <AppHeader />
+
       <div class="app-content">
-        <router-view />
+        <RouterView v-slot="{ Component, route }">
+          <component :is="Component" :key="route.name" />
+        </RouterView>
       </div>
     </div>
   </div>

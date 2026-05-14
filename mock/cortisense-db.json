@@ -59,6 +59,16 @@
       "specialty": "",
       "token": "mock-token-1778786477588",
       "id": "Ys-xetf"
+    },
+    {
+      "firstName": "justinn",
+      "lastName": "mauricio",
+      "email": "justinn@gmail.com",
+      "password": "jus123",
+      "role": "doctor",
+      "specialty": "neurocirugia",
+      "token": "mock-token-1778791562665",
+      "id": "NXfh06X"
     }
   ],
   "shifts": [
@@ -95,6 +105,58 @@
       "value": "Break recommended",
       "timestamp": "12:00 PM",
       "severity": "warning"
+    }
+  ],
+  "medicalDevices": [
+    {
+      "id": "md-001",
+      "medicalStaffId": "2",
+      "name": "FitBand Pro",
+      "type": "wearable",
+      "syncStatus": "connected",
+      "lastSyncAt": "2026-05-14 18:36:45"
+    },
+    {
+      "id": "md-002",
+      "medicalStaffId": "yNv7a0d",
+      "name": "PulseWatch X",
+      "type": "smartwatch",
+      "syncStatus": "disconnected",
+      "lastSyncAt": "2026-05-14 17:07:31"
+    },
+    {
+      "id": "md-1778791611002",
+      "medicalStaffId": "NXfh06X",
+      "name": "redmi",
+      "type": "smartwatch",
+      "syncStatus": "connected",
+      "lastSyncAt": "2026-05-14 18:36:59"
+    }
+  ],
+  "biometricData": [
+    {
+      "id": "bio-1778794914428-2-247",
+      "medicalStaffId": "2",
+      "heartRate": 81,
+      "sleepHours": 6.8,
+      "activityLevel": "high",
+      "recordedAt": "2026-05-13 22:10"
+    },
+    {
+      "id": "bio-1778794914477-yNv7a0d-910",
+      "medicalStaffId": "yNv7a0d",
+      "heartRate": 75,
+      "sleepHours": 7.2,
+      "activityLevel": "moderate",
+      "recordedAt": "2026-05-13 22:10"
+    },
+    {
+      "id": "bio-1778794914503-NXfh06X-602",
+      "medicalStaffId": "NXfh06X",
+      "heartRate": 95,
+      "sleepHours": 6.1,
+      "activityLevel": "high",
+      "recordedAt": "2026-05-13 22:10"
     }
   ]
 }
