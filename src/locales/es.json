@@ -1,7 +1,7 @@
 {
   "app": {
-    "name": "MediSync",
-    "tagline": "Plataforma de Gestión Clínica"
+    "name": "CortiSense",
+    "tagline": "Plataforma de Control de Niveles de Estrés"
   },
   "nav": {
     "home": "Inicio",
@@ -48,7 +48,7 @@
   },
   "home": {
     "hero_title": "Tus pacientes,\ntu práctica,\nen un solo lugar.",
-    "hero_subtitle": "MediSync integra agendamiento, historiales e informes en un único espacio clínico.",
+    "hero_subtitle": "CortiSense integra agendamiento, historiales e informes en un único espacio clínico.",
     "cta_primary": "Comenzar",
     "cta_secondary": "Saber más",
     "feature_1_title": "Historiales Unificados",
@@ -78,6 +78,15 @@
     "morning": "Día",
     "afternoon": "Tarde",
     "evening": "Noche"
+  },
+  "login": {
+    "care": "Cuidado para",
+    "who_care": "quienes cuidan.",
+    "biometric": "Monitoreo biométrico y gestión inteligente de turnos para prevenir el agotamiento médico.",
+    "demo": "Credenciales de demostración"
+  },
+  "register": {
+
   },
   "roles": {
     "admin": "Administrador",

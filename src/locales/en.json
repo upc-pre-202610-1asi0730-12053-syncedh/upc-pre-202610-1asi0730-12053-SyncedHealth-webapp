@@ -1,7 +1,7 @@
 {
   "app": {
-    "name": "MediSync",
-    "tagline": "Clinical Management Platform"
+    "name": "CortiSense",
+    "tagline": "Stress Levels Control Platform"
   },
   "nav": {
     "home": "Home",
@@ -48,7 +48,7 @@
   },
   "home": {
     "hero_title": "Your patients,\nyour practice,\nin one place.",
-    "hero_subtitle": "MediSync brings together scheduling, records, and reporting into a single clinical workspace.",
+    "hero_subtitle": "CortiSense brings together scheduling, records, and reporting into a single clinical workspace.",
     "cta_primary": "Get Started",
     "cta_secondary": "Learn more",
     "feature_1_title": "Unified Records",
@@ -78,6 +78,15 @@
     "morning": "Morning",
     "afternoon": "Afternoon",
     "evening": "Evening"
+  },
+  "login": {
+    "care": "Care for those",
+    "who_care": "who care.",
+    "biometric": "Biometric monitoring and intelligent shift management to prevent medical burnout.",
+    "demo": "Demo Credentials"
+  },
+  "register": {
+
   },
   "roles": {
     "admin": "Administrator",

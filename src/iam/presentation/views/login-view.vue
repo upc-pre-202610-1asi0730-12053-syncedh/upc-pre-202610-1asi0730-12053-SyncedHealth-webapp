@@ -32,35 +32,39 @@ async function handleSubmit() {
 
 <template>
   <div class="auth-shell">
-    <!-- Left brand panel -->
     <aside class="auth-brand">
       <div class="brand-inner">
         <div class="brand-logo">
           <span class="logo-icon">✦</span>
           <span class="logo-text">CortiSense</span>
         </div>
-        <h2 class="brand-headline">Clinical care,<br/>beautifully organised.</h2>
-        <p class="brand-sub">The unified workspace for modern medical teams.</p>
+        <h2 class="brand-headline">{{ t('login.care') || 'Care for those' }}<br/>{{ t('login.who_care') || 'who care.' }}</h2>
+        <p class="brand-sub">{{ t('login.biometric') || 'Biometric monitoring and intelligent shift management to prevent medical burnout.' }}</p>
 
         <div class="brand-hints">
-          <p class="hint-label">Demo credentials</p>
-          <div class="hint-row"><span>admin@medisync.com</span><span>·</span><span>medisync2026</span></div>
-          <div class="hint-row"><span>doctor@medisync.com</span><span>·</span><span>medisync2026</span></div>
+          <p class="hint-label">{{ t('login.demo') || 'Demo Credentials' }}</p>
+          <div class="hint-row">
+            <i class="pi pi-shield"></i>
+            <span>admin@syncedhealth.com</span><span>·</span><span>synced2026</span>
+          </div>
+          <div class="hint-row">
+            <i class="pi pi-user"></i>
+            <span>doctor@syncedhealth.com</span><span>·</span><span>synced2026</span>
+          </div>
         </div>
 
         <div class="brand-decor" aria-hidden="true">
-          <div class="decor-ring ring-1"></div>
-          <div class="decor-ring ring-2"></div>
+          <div class="decor-pulse pulse-1"></div>
+          <div class="decor-pulse pulse-2"></div>
         </div>
       </div>
     </aside>
 
-    <!-- Right form panel -->
     <main class="auth-form-panel">
       <div class="auth-form-card">
         <div class="form-header">
-          <h1>{{ t('auth.welcome_back') }}</h1>
-          <p class="text-muted">{{ t('auth.login_subtitle') }}</p>
+          <h1>{{ t('auth.welcome_back') || 'Welcome back' }}</h1>
+          <p class="text-muted">{{ t('auth.login_subtitle') || 'Enter your credentials to access your health monitor.' }}</p>
         </div>
 
         <form class="auth-form" @submit.prevent="handleSubmit" novalidate>
@@ -120,7 +124,7 @@ async function handleSubmit() {
   min-height: 100vh;
 }
 
-/* Brand panel */
+/* Brand panel - Color corporativo de SyncedHealth (Teal/Dark Green) */
 .auth-brand {
   position: relative;
   width: 44%;
@@ -186,16 +190,17 @@ async function handleSubmit() {
   color: var(--ms-sidebar-text);
   margin-bottom: .2rem;
 }
+.hint-row .pi { font-size: .75rem; color: #14a8a8; }
 
-/* Decorative rings */
+/* Decorative Pulse Rings */
 .brand-decor { position: absolute; top: 0; right: -80px; bottom: 0; pointer-events: none; z-index: 1; }
-.decor-ring {
+.decor-pulse {
   position: absolute;
   border-radius: 50%;
   border: 1px solid rgba(20,168,168,.2);
 }
-.ring-1 { width: 420px; height: 420px; top: 10%; right: -100px; }
-.ring-2 { width: 280px; height: 280px; top: 30%; right: -30px; border-color: rgba(20,168,168,.1); }
+.pulse-1 { width: 420px; height: 420px; top: 10%; right: -100px; }
+.pulse-2 { width: 280px; height: 280px; top: 30%; right: -30px; border-color: rgba(20,168,168,.1); }
 
 /* Form panel */
 .auth-form-panel {
@@ -276,7 +281,6 @@ async function handleSubmit() {
   padding: .65rem .875rem;
 }
 
-/* Submit button */
 .ms-btn-primary {
   height: 46px;
   background: var(--ms-primary);
@@ -305,7 +309,7 @@ async function handleSubmit() {
   border-radius: 50%;
   animation: spin .7s linear infinite;
 }
-@keyframes spin { to { transform: rotate(360deg); } }
+.ms-btn-primary:hover { background: #0a5a5a; }
 
 /* Switch link */
 .auth-switch {
