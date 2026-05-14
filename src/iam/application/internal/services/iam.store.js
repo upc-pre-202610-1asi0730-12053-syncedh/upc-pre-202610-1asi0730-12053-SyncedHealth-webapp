@@ -16,7 +16,6 @@ export const useIamStore = defineStore('iam', () => {
     const isAdmin  = computed(() => currentUser.value?.role === 'admin');
     const isDoctor = computed(() => currentUser.value?.role === 'doctor');
 
-
     function restoreSession() {
         const raw = localStorage.getItem(SESSION_KEY);
         if (raw) {
@@ -84,7 +83,7 @@ export const useIamStore = defineStore('iam', () => {
         localStorage.removeItem(SESSION_KEY);
     }
 
-    return { currentUser, errors, loading, isAuthenticated, restoreSession, signIn, signUp, signOut };
+    return { currentUser, errors, loading, isAuthenticated, isAdmin, isDoctor, restoreSession, signIn, signUp, signOut };
 });
 
 export default useIamStore;

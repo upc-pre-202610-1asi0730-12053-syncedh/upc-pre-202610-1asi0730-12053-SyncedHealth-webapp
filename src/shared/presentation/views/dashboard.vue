@@ -8,9 +8,9 @@ const store = useIamStore();
 
 const greeting = computed(() => {
   const h = new Date().getHours();
-  if (h < 12) return 'Morning';
-  if (h < 18) return 'Afternoon';
-  return 'Evening';
+  if (h < 12) return t('dashboard.morning');
+  if (h < 18) return t('dashboard.afternoon');
+  return t('dashboard.evening');
 });
 
 const stats = computed(() => {
@@ -50,8 +50,8 @@ const biometricAlerts = [
     <div class="dash-header">
       <div>
         <h1>{{ t('dashboard.title') || 'Health Monitor Dashboard' }}</h1>
-        <p class="text-muted">Good {{ greeting }}, {{ store.currentUser?.firstName }}
-          <span class="role-chip">{{ store.isAdmin ? 'System Admin' : 'Medical Staff' }}</span>
+        <p class="text-muted">{{ t('dashboard.welcome', { time: greeting, name: store.currentUser?.firstName }) }}
+          <span class="role-chip">{{ store.isAdmin ? t('roles.admin') : t('roles.doctor') }}</span>
         </p>
       </div>
     </div>
@@ -74,7 +74,7 @@ const biometricAlerts = [
       <div class="card-ms">
         <div class="card-title">
           <i class="pi pi-calendar-times"></i>
-          Today's Shift Schedule
+          {{ t('dashboard.todays_shift_schedule') || 'Todays Shift Schedule' }}
         </div>
         <div class="appt-list">
           <div v-for="s in shifts" :key="s.time" class="appt-row">
@@ -91,7 +91,7 @@ const biometricAlerts = [
       <div class="card-ms">
         <div class="card-title">
           <i class="pi pi-activity"></i>
-          Biometric Notifications
+          {{ t('dashboard.biometric_notifications') || 'Biometric Notifications' }}
         </div>
         <div class="activity-list">
           <div v-for="a in biometricAlerts" :key="a.text" class="activity-row">
@@ -108,13 +108,13 @@ const biometricAlerts = [
     <div v-if="store.isAdmin" class="card-ms admin-panel">
       <div class="card-title">
         <i class="pi pi-shield"></i>
-        Staff Management Tools
+        {{ t('dashboard.staff_management_tools') || 'Staff Management Tools' }}
       </div>
       <div class="admin-tools">
-        <div class="admin-tool-btn"><i class="pi pi-users"></i> Staff Directory</div>
-        <div class="admin-tool-btn"><i class="pi pi-map"></i> Shift Rotation</div>
-        <div class="admin-tool-btn"><i class="pi pi-chart-bar"></i> Health Analytics</div>
-        <div class="admin-tool-btn"><i class="pi pi-history"></i> Biometric Logs</div>
+        <div class="admin-tool-btn"><i class="pi pi-users"></i> {{ t('dashboard.staff_directory') || 'Staff Directory' }}</div>
+        <div class="admin-tool-btn"><i class="pi pi-map"></i> {{ t('dashboard.shift_rotation') || 'Shift Rotation' }}</div>
+        <div class="admin-tool-btn"><i class="pi pi-chart-bar"></i> {{ t('dashboard.health_analytics') || 'Health Analytics' }}</div>
+        <div class="admin-tool-btn"><i class="pi pi-history"></i> {{ t('dashboard.biometric_logs') || 'Biometric Logs' }}</div>
       </div>
     </div>
   </div>

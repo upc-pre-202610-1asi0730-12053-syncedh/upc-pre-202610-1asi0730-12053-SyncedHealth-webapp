@@ -67,7 +67,17 @@
     "today_appointments": "Citas de Hoy",
     "total_patients": "Total de Pacientes",
     "pending_reports": "Informes Pendientes",
-    "recent_activity": "Actividad Reciente"
+    "recent_activity": "Actividad Reciente",
+    "staff_directory": "Directorio del personal",
+    "shift_rotation": "Rotación de turnos",
+    "health_analytics": "Análisis de salud",
+    "biometric_logs": "Registros biométricos",
+    "staff_management_tools": "Herramientas de gestión del personal",
+    "biometric_notifications": "Notificaciones biométricas",
+    "todays_shift_schedule": "Horario de turnos de hoy",
+    "morning": "Día",
+    "afternoon": "Tarde",
+    "evening": "Noche"
   },
   "roles": {
     "admin": "Administrador",

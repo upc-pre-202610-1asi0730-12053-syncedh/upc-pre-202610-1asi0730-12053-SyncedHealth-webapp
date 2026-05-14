@@ -49,6 +49,16 @@
       "specialty": "",
       "token": "mock-token-1778777299074",
       "id": "BHf_crk"
+    },
+    {
+      "firstName": "Carla",
+      "lastName": "Campos",
+      "email": "xiuxiu@hotmail.com",
+      "password": "xiuxiu1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778786477588",
+      "id": "Ys-xetf"
     }
   ],
   "shifts": [

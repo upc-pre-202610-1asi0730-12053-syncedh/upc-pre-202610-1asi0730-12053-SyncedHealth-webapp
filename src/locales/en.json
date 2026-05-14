@@ -67,7 +67,17 @@
     "today_appointments": "Today's Appointments",
     "total_patients": "Total Patients",
     "pending_reports": "Pending Reports",
-    "recent_activity": "Recent Activity"
+    "recent_activity": "Recent Activity",
+    "staff_directory": "Staff Directory",
+    "shift_rotation": "Shift Rotation",
+    "health_analytics": "Health Analytics",
+    "biometric_logs": "Biometric Logs",
+    "staff_management_tools": "Staff Management Tools",
+    "biometric_notifications": "Biometric Notifications",
+    "todays_shift_schedule": "Today's Shift Schedule",
+    "morning": "Morning",
+    "afternoon": "Afternoon",
+    "evening": "Evening"
   },
   "roles": {
     "admin": "Administrator",
