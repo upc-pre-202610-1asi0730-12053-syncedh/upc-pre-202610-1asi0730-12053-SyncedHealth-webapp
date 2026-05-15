@@ -63,6 +63,29 @@
     "stats_doctors": "Médicos registrados",
     "stats_uptime": "Disponibilidad de plataforma"
   },
+  "billing": {
+    "title": "Suscripción y Planes",
+    "current_plan": "Plan Actual",
+    "upgrade": "Actualizar Ahora",
+    "cancel": "Cancelar Suscripción",
+    "status_active": "Activo",
+    "status_canceled": "Cancelado",
+    "status_past_due": "Pago Vencido",
+    "next_billing": "Próxima fecha de cobro",
+    "redirecting": "Redirigiendo al pago...",
+    "success_title": "¡Suscripción Activada!",
+    "success_desc": "Tu plan ya está activo. Bienvenido.",
+    "cancel_title": "Pago Cancelado",
+    "cancel_desc": "Tu suscripción no fue modificada.",
+    "free_plan": "Básico",
+    "pro_plan": "Pro",
+    "enterprise_plan": "Empresa",
+    "errors": {
+      "checkout_failed": "No se pudo iniciar el proceso de pago.",
+      "fetch_failed": "No se pudo cargar la información de suscripción.",
+      "cancel_failed": "No se pudo cancelar la suscripción."
+    }
+  },
   "dashboard": {
     "title": "Panel",
     "welcome": "Buen {time}, {name}",

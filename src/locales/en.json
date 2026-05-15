@@ -63,6 +63,29 @@
     "stats_doctors": "Doctors onboard",
     "stats_uptime": "Platform uptime"
   },
+  "billing": {
+    "title": "Subscription & Plans",
+    "current_plan": "Current Plan",
+    "upgrade": "Upgrade Now",
+    "cancel": "Cancel Subscription",
+    "status_active": "Active",
+    "status_canceled": "Canceled",
+    "status_past_due": "Past Due",
+    "next_billing": "Next billing date",
+    "redirecting": "Redirecting to checkout...",
+    "success_title": "Subscription Activated!",
+    "success_desc": "Your plan is now active. Welcome aboard.",
+    "cancel_title": "Payment Canceled",
+    "cancel_desc": "Your subscription was not changed.",
+    "free_plan": "Free",
+    "pro_plan": "Pro",
+    "enterprise_plan": "Enterprise",
+    "errors": {
+      "checkout_failed": "Could not start the payment process.",
+      "fetch_failed": "Could not load subscription data.",
+      "cancel_failed": "Could not cancel subscription."
+    }
+  },
   "dashboard": {
     "title": "Dashboard",
     "welcome": "Good {time}, {name}",

@@ -20,6 +20,7 @@ const Settings     = () => import('./shared/presentation/views/placeholder.vue')
 
 // Layout
 import AppLayout from './shared/presentation/components/app-layout.vue';
+import billingRoutes from "./subscription-and-plan-management/presentation/router/billing-routes.js";
 
 const routes = [
     // RUTAS PÚBLICAS
@@ -95,6 +96,7 @@ const routes = [
                     placeholder: { icon: 'pi-cog', label: 'Settings' },
                 },
             },
+            ...billingRoutes,
         ],
     },
 
