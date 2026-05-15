@@ -7,20 +7,13 @@ const MedicalStaffForm = () =>
 const MedicalStaffDetail = () =>
     import("./views/medical-staff-detail.vue");
 
-/**
- * Medical staff management routes.
- *
- * These routes belong to the Identity & Access Management bounded context,
- * because they manage institutional users, roles and staff profiles.
- */
 const medicalStaffRoutes = [
     {
         path: "list",
         name: "medical-staff-list",
         component: MedicalStaffList,
         meta: {
-            title: "Medical Staff",
-            layout: "app"
+            title: "Medical Staff"
         }
     },
     {
@@ -28,8 +21,7 @@ const medicalStaffRoutes = [
         name: "medical-staff-create",
         component: MedicalStaffForm,
         meta: {
-            title: "Register Medical Staff",
-            layout: "app"
+            title: "Register Medical Staff"
         }
     },
     {
@@ -37,8 +29,7 @@ const medicalStaffRoutes = [
         name: "medical-staff-detail",
         component: MedicalStaffDetail,
         meta: {
-            title: "Medical Staff Detail",
-            layout: "app"
+            title: "Medical Staff Detail"
         }
     },
     {
@@ -46,8 +37,7 @@ const medicalStaffRoutes = [
         name: "medical-staff-edit",
         component: MedicalStaffForm,
         meta: {
-            title: "Edit Medical Staff",
-            layout: "app"
+            title: "Edit Medical Staff"
         }
     }
 ];

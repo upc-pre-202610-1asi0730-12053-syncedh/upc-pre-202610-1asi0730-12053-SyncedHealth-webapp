@@ -11,7 +11,7 @@ import AppTopbar from "./app-topbar.vue";
       <app-topbar />
 
       <section class="app-content">
-        <slot />
+        <router-view :key="$route.fullPath" />
       </section>
     </main>
   </div>
@@ -22,14 +22,14 @@ import AppTopbar from "./app-topbar.vue";
   min-height: 100vh;
   display: grid;
   grid-template-columns: 304px 1fr;
-  background: var(--cs-background, #edfffb);
+  background: #f7fbfc;
 }
 
 .app-main {
   min-width: 0;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #f7fbfc;
 }
 
 .app-content {
