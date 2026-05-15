@@ -13,10 +13,10 @@ const collapsed = ref(false);
 
 const allItems = [
   {
-    key: 'dashboard',
-    label: 'nav.dashboard',
+    key: 'metrics',
+    label: 'nav.metrics',
     icon: 'pi-th-large',
-    to: '/app/dashboard',
+    to: '/app/metrics',
     roles: ['admin', 'doctor']
   },
   {

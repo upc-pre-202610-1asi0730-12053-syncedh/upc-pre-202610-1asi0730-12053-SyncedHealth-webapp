@@ -25,7 +25,7 @@ async function handleSubmit() {
 
   const ok = await store.signIn(new SignInCommand(email.value, password.value));
   if (ok) {
-    const redirect = route.query.redirect || '/app/dashboard';
+    const redirect = route.query.redirect || '/app/metrics';
     await router.push(redirect);
   }
 }

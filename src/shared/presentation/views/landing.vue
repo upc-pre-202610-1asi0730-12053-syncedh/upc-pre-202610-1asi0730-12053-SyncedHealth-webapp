@@ -10,7 +10,7 @@ const router = useRouter();
 const store  = useIamStore();
 
 function goToDashboard() {
-  if (store.isAuthenticated) router.push('/dashboard');
+  if (store.isAuthenticated) router.push('/metrics');
   else router.push('/iam/login');
 }
 </script>

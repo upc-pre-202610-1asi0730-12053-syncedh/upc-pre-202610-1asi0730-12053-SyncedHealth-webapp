@@ -69,6 +69,546 @@
       "specialty": "neurocirugia",
       "token": "mock-token-1778791562665",
       "id": "NXfh06X"
+    },
+    {
+      "firstName": "jairo",
+      "lastName": "santiago",
+      "email": "jairo@gmail.com",
+      "password": "12345",
+      "role": "doctor",
+      "specialty": "medico cirujano",
+      "token": "mock-token-1778821837939",
+      "id": "mkIB6bp"
+    },
+    {
+      "firstName": "jairo",
+      "lastName": "santiago",
+      "email": "ja@gmail.com",
+      "password": "1234",
+      "role": "doctor",
+      "specialty": "medico",
+      "token": "mock-token-1778826593369",
+      "id": "ErUk7ea"
+    },
+    {
+      "firstName": "jairo",
+      "lastName": "santiago",
+      "email": "ja@gmail.com",
+      "password": "1234",
+      "role": "doctor",
+      "specialty": "medico",
+      "token": "mock-token-1778826595029",
+      "id": "Wj24DYm"
+    },
+    {
+      "firstName": "jairo",
+      "lastName": "santiago",
+      "email": "ja@gmail.com",
+      "password": "1234",
+      "role": "doctor",
+      "specialty": "medico",
+      "token": "mock-token-1778826595744",
+      "id": "qeoCAer"
+    },
+    {
+      "firstName": "jairo",
+      "lastName": "santiago",
+      "email": "ja@gmail.com",
+      "password": "1234",
+      "role": "doctor",
+      "specialty": "medico",
+      "token": "mock-token-1778826596322",
+      "id": "3U1u1e-"
+    },
+    {
+      "firstName": "jairo",
+      "lastName": "santiago",
+      "email": "ja@gmail.com",
+      "password": "1234",
+      "role": "doctor",
+      "specialty": "medico",
+      "token": "mock-token-1778826596915",
+      "id": "0ShRNbU"
+    },
+    {
+      "firstName": "jairo",
+      "lastName": "santiago",
+      "email": "ja@gmail.com",
+      "password": "1234",
+      "role": "doctor",
+      "specialty": "medico",
+      "token": "mock-token-1778826597468",
+      "id": "-ASfNgL"
+    },
+    {
+      "firstName": "jairo",
+      "lastName": "santiago",
+      "email": "ja@gmail.com",
+      "password": "1234",
+      "role": "doctor",
+      "specialty": "medico",
+      "token": "mock-token-1778826598039",
+      "id": "p7bfiPd"
+    },
+    {
+      "firstName": "jairo",
+      "lastName": "santiago",
+      "email": "ja@gmail.com",
+      "password": "1234",
+      "role": "doctor",
+      "specialty": "medico",
+      "token": "mock-token-1778826598187",
+      "id": "GYJNftL"
+    },
+    {
+      "firstName": "jairo",
+      "lastName": "santiago",
+      "email": "ja@gmail.com",
+      "password": "1234",
+      "role": "doctor",
+      "specialty": "medico",
+      "token": "mock-token-1778826598358",
+      "id": "2hlcMkj"
+    },
+    {
+      "firstName": "jairo",
+      "lastName": "santiago",
+      "email": "ja@gmail.com",
+      "password": "1234",
+      "role": "doctor",
+      "specialty": "medico",
+      "token": "mock-token-1778826598515",
+      "id": "u9SYlaG"
+    },
+    {
+      "firstName": "jairo",
+      "lastName": "santiago",
+      "email": "ja@gmail.com",
+      "password": "1234",
+      "role": "doctor",
+      "specialty": "medico",
+      "token": "mock-token-1778826598669",
+      "id": "cVSXhlT"
+    },
+    {
+      "firstName": "jairo",
+      "lastName": "santiago",
+      "email": "ja@gmail.com",
+      "password": "1234",
+      "role": "doctor",
+      "specialty": "medico",
+      "token": "mock-token-1778826598811",
+      "id": "LWAYBPq"
+    },
+    {
+      "firstName": "jairo",
+      "lastName": "santiago",
+      "email": "ja@gmail.com",
+      "password": "1234",
+      "role": "doctor",
+      "specialty": "medico",
+      "token": "mock-token-1778826598968",
+      "id": "XMbNZnF"
+    },
+    {
+      "firstName": "jairo",
+      "lastName": "santiago",
+      "email": "ja@gmail.com",
+      "password": "1234",
+      "role": "doctor",
+      "specialty": "medico",
+      "token": "mock-token-1778826599147",
+      "id": "S6DYd-m"
+    },
+    {
+      "firstName": "jairo",
+      "lastName": "santiago",
+      "email": "ja@gmail.com",
+      "password": "1234",
+      "role": "doctor",
+      "specialty": "medico",
+      "token": "mock-token-1778826612198",
+      "id": "FniFzIl"
+    },
+    {
+      "firstName": "jairo",
+      "lastName": "santiago",
+      "email": "ja@gmail.com",
+      "password": "1234",
+      "role": "doctor",
+      "specialty": "medico",
+      "token": "mock-token-1778826612741",
+      "id": "LtO8tcT"
+    },
+    {
+      "firstName": "jair",
+      "lastName": "mat",
+      "email": "mat@gmail.com",
+      "password": "1234",
+      "role": "doctor",
+      "specialty": "medico",
+      "token": "mock-token-1778826634600",
+      "id": "6a_c17o"
+    },
+    {
+      "firstName": "mat",
+      "lastName": "ja",
+      "email": "mouse@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827433227",
+      "id": "NhQp6gY"
+    },
+    {
+      "firstName": "mat",
+      "lastName": "ja",
+      "email": "mouse@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827435949",
+      "id": "dz_QxLp"
+    },
+    {
+      "firstName": "mat",
+      "lastName": "ja",
+      "email": "mouse@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827436778",
+      "id": "YXGAJt6"
+    },
+    {
+      "firstName": "mat",
+      "lastName": "ja",
+      "email": "mouse@gmail.com",
+      "password": "123412",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827439897",
+      "id": "JQRpAlm"
+    },
+    {
+      "firstName": "mat",
+      "lastName": "ja",
+      "email": "mouse@gmail.com",
+      "password": "123412",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827440480",
+      "id": "BJvAN2A"
+    },
+    {
+      "firstName": "mat",
+      "lastName": "ja",
+      "email": "mouse@gmail.com",
+      "password": "123412",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827440658",
+      "id": "5moHA75"
+    },
+    {
+      "firstName": "mat",
+      "lastName": "ja",
+      "email": "mouse@gmail.com",
+      "password": "123412",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827440823",
+      "id": "32Uhs3O"
+    },
+    {
+      "firstName": "mat",
+      "lastName": "ja",
+      "email": "mouse@gmail.com",
+      "password": "123412",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827441005",
+      "id": "6sY7bmN"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marmer@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827462630",
+      "id": "N7QCpLq"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marmer@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827605926",
+      "id": "Jyx5E_l"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marmer@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827607945",
+      "id": "OpiKWvd"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marmer@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827608534",
+      "id": "IoR_2wz"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marmer@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827609264",
+      "id": "lLr1ZkP"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marmer@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827609737",
+      "id": "QrIIaUZ"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marmer@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827609885",
+      "id": "_EIrp8N"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marmer@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827610046",
+      "id": "iwG02Om"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marmer@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827610220",
+      "id": "G_dfQsq"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marr@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827629245",
+      "id": "BFlynYe"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marr@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827629810",
+      "id": "1yu9dHK"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marr@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827630290",
+      "id": "HIGAei9"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marr@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827630603",
+      "id": "NZT8MSz"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marr@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827630778",
+      "id": "O8PNFhJ"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marr@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827630941",
+      "id": "UREBv43"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marr@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827631578",
+      "id": "odYiI04"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marr@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827631813",
+      "id": "iIUva6N"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marr@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827632052",
+      "id": "9pjYXeK"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marr@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827632255",
+      "id": "0LlPLeX"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marr@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827632441",
+      "id": "V6_gEmO"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marr@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827632626",
+      "id": "OUXHnfl"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marr@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827632799",
+      "id": "2EmuKCr"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marr@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827632979",
+      "id": "tXvu-FW"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marr@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827633160",
+      "id": "LSd7VFK"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marr@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827633344",
+      "id": "L6MunGp"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marr@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827633522",
+      "id": "omNF9W6"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mer",
+      "email": "marr@gmail.com",
+      "password": "1234",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827633700",
+      "id": "uSjjsNA"
+    },
+    {
+      "firstName": "mar",
+      "lastName": "mar",
+      "email": "marrr@gmail.com",
+      "password": "1233",
+      "role": "admin",
+      "specialty": "",
+      "token": "mock-token-1778827705602",
+      "id": "R6n77Xg"
     }
   ],
   "shifts": [
@@ -237,6 +777,174 @@
       "sleepHours": 7.2,
       "activityLevel": "moderate",
       "recordedAt": "2026-05-14 18:55:26"
+    },
+    {
+      "id": "bio-1778830826764-2-704",
+      "medicalStaffId": "2",
+      "heartRate": 85,
+      "sleepHours": 6.1,
+      "activityLevel": "low",
+      "recordedAt": "2026-05-15 02:40:26"
+    },
+    {
+      "id": "bio-1778830826788-yNv7a0d-881",
+      "medicalStaffId": "yNv7a0d",
+      "heartRate": 91,
+      "sleepHours": 4.8,
+      "activityLevel": "moderate",
+      "recordedAt": "2026-05-15 02:40:26"
+    },
+    {
+      "id": "bio-1778830826802-NXfh06X-859",
+      "medicalStaffId": "NXfh06X",
+      "heartRate": 100,
+      "sleepHours": 6.5,
+      "activityLevel": "low",
+      "recordedAt": "2026-05-15 02:40:26"
+    },
+    {
+      "id": "bio-1778830827333-2-612",
+      "medicalStaffId": "2",
+      "heartRate": 83,
+      "sleepHours": 7.4,
+      "activityLevel": "high",
+      "recordedAt": "2026-05-15 02:40:27"
+    },
+    {
+      "id": "bio-1778830827364-yNv7a0d-825",
+      "medicalStaffId": "yNv7a0d",
+      "heartRate": 91,
+      "sleepHours": 5.9,
+      "activityLevel": "moderate",
+      "recordedAt": "2026-05-15 02:40:27"
+    },
+    {
+      "id": "bio-1778830827379-NXfh06X-33",
+      "medicalStaffId": "NXfh06X",
+      "heartRate": 105,
+      "sleepHours": 5,
+      "activityLevel": "low",
+      "recordedAt": "2026-05-15 02:40:27"
+    },
+    {
+      "id": "bio-1778830828642-2-213",
+      "medicalStaffId": "2",
+      "heartRate": 92,
+      "sleepHours": 7.1,
+      "activityLevel": "high",
+      "recordedAt": "2026-05-15 02:40:28"
+    },
+    {
+      "id": "bio-1778830828671-yNv7a0d-384",
+      "medicalStaffId": "yNv7a0d",
+      "heartRate": 86,
+      "sleepHours": 7.3,
+      "activityLevel": "moderate",
+      "recordedAt": "2026-05-15 02:40:28"
+    },
+    {
+      "id": "bio-1778830828687-NXfh06X-209",
+      "medicalStaffId": "NXfh06X",
+      "heartRate": 99,
+      "sleepHours": 6.9,
+      "activityLevel": "moderate",
+      "recordedAt": "2026-05-15 02:40:28"
+    },
+    {
+      "id": "bio-1778830829150-2-751",
+      "medicalStaffId": "2",
+      "heartRate": 85,
+      "sleepHours": 7.6,
+      "activityLevel": "moderate",
+      "recordedAt": "2026-05-15 02:40:29"
+    },
+    {
+      "id": "bio-1778830829172-yNv7a0d-739",
+      "medicalStaffId": "yNv7a0d",
+      "heartRate": 87,
+      "sleepHours": 6.7,
+      "activityLevel": "low",
+      "recordedAt": "2026-05-15 02:40:29"
+    },
+    {
+      "id": "bio-1778830829189-NXfh06X-972",
+      "medicalStaffId": "NXfh06X",
+      "heartRate": 65,
+      "sleepHours": 6.3,
+      "activityLevel": "moderate",
+      "recordedAt": "2026-05-15 02:40:29"
+    },
+    {
+      "id": "bio-1778830829606-2-795",
+      "medicalStaffId": "2",
+      "heartRate": 65,
+      "sleepHours": 6.3,
+      "activityLevel": "moderate",
+      "recordedAt": "2026-05-15 02:40:29"
+    },
+    {
+      "id": "bio-1778830829640-yNv7a0d-372",
+      "medicalStaffId": "yNv7a0d",
+      "heartRate": 76,
+      "sleepHours": 6.2,
+      "activityLevel": "high",
+      "recordedAt": "2026-05-15 02:40:29"
+    },
+    {
+      "id": "bio-1778830829656-NXfh06X-673",
+      "medicalStaffId": "NXfh06X",
+      "heartRate": 72,
+      "sleepHours": 5.5,
+      "activityLevel": "low",
+      "recordedAt": "2026-05-15 02:40:29"
+    },
+    {
+      "id": "bio-1778830829917-2-483",
+      "medicalStaffId": "2",
+      "heartRate": 74,
+      "sleepHours": 7.8,
+      "activityLevel": "high",
+      "recordedAt": "2026-05-15 02:40:29"
+    },
+    {
+      "id": "bio-1778830829939-yNv7a0d-709",
+      "medicalStaffId": "yNv7a0d",
+      "heartRate": 79,
+      "sleepHours": 5.3,
+      "activityLevel": "high",
+      "recordedAt": "2026-05-15 02:40:29"
+    },
+    {
+      "id": "bio-1778830829954-NXfh06X-756",
+      "medicalStaffId": "NXfh06X",
+      "heartRate": 81,
+      "sleepHours": 6.2,
+      "activityLevel": "high",
+      "recordedAt": "2026-05-15 02:40:29"
+    },
+    {
+      "id": "bio-1778830841064-2-597",
+      "medicalStaffId": "2",
+      "heartRate": 93,
+      "sleepHours": 6.7,
+      "activityLevel": "low",
+      "recordedAt": "2026-05-15 02:40:41"
+    },
+    {
+      "id": "bio-1778830841092-yNv7a0d-690",
+      "medicalStaffId": "yNv7a0d",
+      "heartRate": 94,
+      "sleepHours": 4.5,
+      "activityLevel": "high",
+      "recordedAt": "2026-05-15 02:40:41"
+    },
+    {
+      "id": "bio-1778830841110-NXfh06X-815",
+      "medicalStaffId": "NXfh06X",
+      "heartRate": 98,
+      "sleepHours": 7.9,
+      "activityLevel": "low",
+      "recordedAt": "2026-05-15 02:40:41"
     }
   ]
 }

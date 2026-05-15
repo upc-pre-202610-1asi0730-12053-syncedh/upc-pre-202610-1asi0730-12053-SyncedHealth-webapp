@@ -6,6 +6,7 @@
   "nav": {
     "home": "Home",
     "dashboard": "Dashboard",
+    "metrics": "Metrics",
     "biometrics": "Biometrics",
     "devices": "Devices",
     "patients": "Patients",
@@ -80,6 +81,30 @@
     "morning": "Morning",
     "afternoon": "Afternoon",
     "evening": "Evening"
+  },
+  "metrics": {
+    "doctor_tabs": {
+      "summary": "IoT Summary",
+      "cortisol": "My Cortisol",
+      "shifts": "My Shifts"
+    },
+    "admin_tabs": {
+      "real_time": "Real-Time Monitoring",
+      "trends": "Hospital Trends",
+      "availability": "Staff Availability"
+    },
+    "titles": {
+      "admin_dashboard": "Operational Control Panel",
+      "admin_subtitle": "Real-time supervision of medical staff",
+      "doctor_summary": "General IoT Summary",
+      "doctor_cortisol": "My Weekly Cortisol",
+      "doctor_shifts": "My Scheduled Shifts"
+    },
+    "status": {
+      "critico": "Critical",
+      "advertencia": "Warning",
+      "estable": "Stable"
+    }
   },
   "cra": {
     "deviceManagement": {

@@ -11,7 +11,7 @@ const router = useRouter();
       <div class="unauth-icon"><i class="pi pi-lock"></i></div>
       <h1>{{ t('errors.unauthorized') }}</h1>
       <p class="text-muted">{{ t('errors.unauthorized_desc') }}</p>
-      <button class="ms-btn" @click="router.push('/dashboard')">
+      <button class="ms-btn" @click="router.push('/metrics')">
         <i class="pi pi-arrow-left"></i> {{ t('common.back') }}
       </button>
     </div>
