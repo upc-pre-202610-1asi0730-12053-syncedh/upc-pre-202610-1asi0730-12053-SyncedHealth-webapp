@@ -8,7 +8,7 @@ const BillingCancelView  = () => import('../views/billing-cancel.view.vue');
 
 const billingRoutes = [
     {
-        path: 'billing',
+        path: '/billing',
         name: 'billing-plans',
         component: BillingPlansView,
         meta: {
@@ -18,7 +18,7 @@ const billingRoutes = [
         },
     },
     {
-        path: 'billing/success',
+        path: '/billing/success',
         name: 'billing-success',
         component: BillingSuccessView,
         meta: {
@@ -27,7 +27,7 @@ const billingRoutes = [
         },
     },
     {
-        path: 'billing/cancel',
+        path: '/billing/cancel',
         name: 'billing-cancel',
         component: BillingCancelView,
         meta: {

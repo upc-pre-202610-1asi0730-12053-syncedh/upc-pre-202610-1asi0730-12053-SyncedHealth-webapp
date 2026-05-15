@@ -12,7 +12,7 @@ const MedicalStaffStatus = () => import("./shared/presentation/views/medical-sta
 const Unauthorized = () => import("./shared/presentation/views/unauthorized.vue");
 const PageNotFound = () => import("./shared/presentation/views/page-not-found.vue");
 // Layout
-import AppLayout from './shared/presentation/components/app-layout.vue';
+
 import billingRoutes from "./subscription-and-plan-management/presentation/router/billing-routes.js";
 
 const routes = [
