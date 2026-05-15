@@ -4,11 +4,15 @@ import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 </script>
 
+<script setup>
+import MetricsView from "../../../metrics/presentation/views/metrics-view.vue";
+</script>
 <template>
   <section class="dashboard-page">
     <h1>{{ t("dashboard.admin.title") }}</h1>
     <p>{{ t("dashboard.admin.subtitle") }}</p>
   </section>
+  <MetricsView />
 </template>
 
 <style scoped>
