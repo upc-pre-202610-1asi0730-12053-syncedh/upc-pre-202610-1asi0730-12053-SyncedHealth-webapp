@@ -19,6 +19,10 @@
     "brand": "CortiSense",
     "tagline": "Health Monitoring",
 
+    "welcomeBack": "Welcome back",
+    "loginHeroTitle": "Care for those who care.",
+    "loginHeroText": "Intelligent biometric monitoring and shift management to prevent medical burnout.",
+
     "signInTitle": "Welcome back",
     "signInSubtitle": "Sign in to access the CortiSense platform.",
     "createTitle": "Create account",
