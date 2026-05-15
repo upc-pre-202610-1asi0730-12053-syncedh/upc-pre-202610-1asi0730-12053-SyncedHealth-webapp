@@ -1,65 +1,61 @@
 <script setup>
-/**
- * Language Switcher Component.
- *
- * Provides a reusable language selector for public authentication views and
- * authenticated layouts.
- */
-
-import { useI18n } from 'vue-i18n';
+import { useI18n } from "vue-i18n";
 
 const { locale, availableLocales } = useI18n();
 
 /**
- * Changes the active application language.
+ * Changes the active application locale.
  *
- * @param {string} language - Locale code selected by the user.
+ * @param {string} selectedLocale - Selected locale code.
  * @returns {void}
  */
-function changeLanguage(language) {
-  locale.value = language;
+function changeLanguage(selectedLocale) {
+  locale.value = selectedLocale;
+  localStorage.setItem("cortisense_locale", selectedLocale);
 }
 </script>
 
 <template>
-  <div class="language-switch" aria-label="Language selector">
+  <div class="language-switcher">
     <button
-        v-for="language in availableLocales"
-        :key="language"
+        v-for="availableLocale in availableLocales"
+        :key="availableLocale"
+        class="language-option"
+        :class="{ active: locale === availableLocale }"
         type="button"
-        :class="{ active: locale === language }"
-        @click="changeLanguage(language)"
+        @click="changeLanguage(availableLocale)"
     >
-      {{ language.toUpperCase() }}
+      {{ availableLocale.toUpperCase() }}
     </button>
   </div>
 </template>
 
 <style scoped>
-.language-switch {
-  display: flex;
+.language-switcher {
+  display: inline-flex;
   overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  background: #171923;
+  box-shadow: 0 14px 28px rgba(14, 36, 51, 0.16);
 }
 
-.language-switch button {
+.language-option {
+  min-width: 56px;
   border: none;
-  padding: 14px 18px;
-  background: #1f222b;
+  padding: 14px 16px;
+  background: #171923;
   color: #ffffff;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
-  transition: 0.2s ease;
 }
 
-.language-switch button.active {
-  background: var(--cs-primary);
-  color: var(--cs-dark);
+.language-option.active {
+  background: var(--cs-primary, #45dde5);
+  color: var(--cs-dark, #0e2433);
 }
 
-.language-switch button:hover {
-  background: var(--cs-primary-strong);
-  color: var(--cs-dark);
+.language-option:hover {
+  background: var(--cs-primary-medium, #68eae8);
+  color: var(--cs-dark, #0e2433);
 }
 </style>

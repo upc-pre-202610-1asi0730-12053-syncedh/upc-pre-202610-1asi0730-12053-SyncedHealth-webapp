@@ -4,7 +4,7 @@
  * @param {import('vue-router').RouteLocationNormalized} to - Target route.
  * @returns {string|null} Redirect path when access is denied; otherwise null.
  */
-export function resolveAuthenticationRedirect(to) {
+export function authenticationGuard(to) {
     const user = JSON.parse(localStorage.getItem('cortisense_user'));
     const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
     const allowedRoles = to.matched.flatMap(record => record.meta.roles || []);

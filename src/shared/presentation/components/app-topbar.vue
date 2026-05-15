@@ -1,33 +1,33 @@
 <script setup>
-/**
- * App Topbar Component.
- *
- * Displays the page-level top bar for authenticated CortiSense views.
- * It includes a simple greeting and the shared language switcher.
- */
-
 import { computed } from "vue";
-import useIamStore from "../../../iam/application/internal/services/iam.store.js";
+import { useI18n } from "vue-i18n";
 import LanguageSwitcher from "./language-switcher.vue";
 
-const iamStore = useIamStore();
-
-const currentUser = computed(() => iamStore.currentUser);
+const { t } = useI18n();
 
 /**
- * Greeting text based on the authenticated user.
+ * Reads the authenticated user from localStorage.
+ *
+ * @returns {Object} Current user resource.
  */
-const greeting = computed(() => {
-  if (!currentUser.value) return "Bienvenido";
-  return `Bienvenido, ${currentUser.value.firstName}`;
-});
+function getStoredUser() {
+  try {
+    return JSON.parse(localStorage.getItem("cortisense_user")) || {};
+  } catch {
+    return {};
+  }
+}
+
+const currentUser = computed(() => getStoredUser());
+
+const firstName = computed(() => currentUser.value?.firstName || "Usuario");
 </script>
 
 <template>
   <header class="app-topbar">
     <div>
-      <h2>{{ greeting }}</h2>
-      <p>Monitoreo preventivo y gestión operativa del personal médico.</p>
+      <h2>{{ t("layout.welcome", { name: firstName }) }}</h2>
+      <p>{{ t("layout.subtitle") }}</p>
     </div>
 
     <language-switcher />
@@ -36,26 +36,26 @@ const greeting = computed(() => {
 
 <style scoped>
 .app-topbar {
-  min-height: 96px;
-  background: #ffffff;
-  border-bottom: 1px solid #e5eef3;
+  height: 96px;
+  padding: 0 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
+  background: #ffffff;
+  border-bottom: 1px solid #e6eef2;
 }
 
 .app-topbar h2 {
-  margin: 0 0 6px;
-  font-size: 22px;
-  color: var(--cs-dark);
+  margin: 0;
+  color: var(--cs-dark, #0e2433);
+  font-size: 24px;
   font-weight: 800;
 }
 
 .app-topbar p {
-  margin: 0;
-  color: #61738a;
-  font-size: 14px;
+  margin: 6px 0 0;
+  color: var(--cs-gray-dark, #4f555a);
+  font-size: 15px;
   font-weight: 600;
 }
 </style>

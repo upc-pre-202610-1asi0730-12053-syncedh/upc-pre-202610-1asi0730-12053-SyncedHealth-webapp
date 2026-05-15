@@ -1,12 +1,27 @@
+<script setup>
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
+</script>
+
 <template>
-  <main class="page">
-    <h1>Mi estado actual</h1>
-    <p>Consulta de fatiga, alertas personales y recomendaciones de descanso.</p>
-  </main>
+  <section class="dashboard-page">
+    <h1>{{ t("dashboard.medical.title") }}</h1>
+    <p>{{ t("dashboard.medical.subtitle") }}</p>
+  </section>
 </template>
 
 <style scoped>
-.page {
-  padding: 48px;
+.dashboard-page h1 {
+  margin: 0 0 16px;
+  color: var(--cs-dark, #0e2433);
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.dashboard-page p {
+  margin: 0;
+  color: var(--cs-gray-dark, #4f555a);
+  font-size: 17px;
 }
 </style>

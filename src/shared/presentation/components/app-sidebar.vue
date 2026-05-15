@@ -1,270 +1,320 @@
 <script setup>
-/**
- * App Sidebar Component.
- *
- * Displays the role-based internal navigation menu for CortiSense.
- * The sidebar adapts its options according to the authenticated user's role.
- */
-
 import { computed } from "vue";
-import { useRoute } from "vue-router";
-import useIamStore from "../../../iam/application/internal/services/iam.store.js";
-import LogoutButton from "./logout-button.vue";
+import { useRoute, useRouter } from "vue-router";
+import { useI18n } from "vue-i18n";
 
 const route = useRoute();
-const iamStore = useIamStore();
+const router = useRouter();
+const { t } = useI18n();
 
 /**
- * Current authenticated user.
+ * Reads the authenticated user from localStorage.
+ *
+ * @returns {Object} Current user resource.
  */
-const currentUser = computed(() => iamStore.currentUser);
+function getStoredUser() {
+  try {
+    return JSON.parse(localStorage.getItem("cortisense_user")) || {};
+  } catch {
+    return {};
+  }
+}
 
-/**
- * Current authenticated user's role.
- */
-const currentRole = computed(() => currentUser.value?.role || "");
+const currentUser = computed(() => getStoredUser());
+const userRole = computed(() => currentUser.value?.role || "guest");
 
-/**
- * Sidebar menu title according to the authenticated role.
- */
+const userFullName = computed(() => {
+  const firstName = currentUser.value?.firstName || "";
+  const lastName = currentUser.value?.lastName || "";
+  return `${firstName} ${lastName}`.trim() || "CortiSense User";
+});
+
+const userEmail = computed(() => currentUser.value?.email || "user@cortisense.com");
+
+const userInitials = computed(() => {
+  const firstName = currentUser.value?.firstName || "";
+  const lastName = currentUser.value?.lastName || "";
+
+  if (!firstName && !lastName) return "CS";
+
+  return `${firstName.charAt(0)}${lastName.charAt(0)}`.toUpperCase();
+});
+
 const menuTitle = computed(() => {
   const titles = {
-    admin: "Menú administrativo",
-    clinical_supervisor: "Menú supervisor",
-    medical_staff: "Menú clínico"
+    admin: t("navigation.adminMenu"),
+    clinical_supervisor: t("navigation.supervisorMenu"),
+    medical_staff: t("navigation.medicalMenu")
   };
 
-  return titles[currentRole.value] || "Menú";
+  return titles[userRole.value] || t("navigation.menu");
 });
 
 /**
- * Role-based menu options.
+ * Role-based sidebar navigation items.
  */
-const menuItems = computed(() => {
-  if (currentRole.value === "admin") {
-    return [
-      { label: "Dashboard", icon: "▦", to: "/admin/dashboard" },
-      { label: "Personal médico", icon: "👥", to: "/admin/staff" },
-      { label: "Invitaciones", icon: "✉", to: "/admin/invitations", disabled: true },
-      { label: "Suscripción", icon: "◈", to: "/admin/subscription", disabled: true },
-      { label: "Reportes", icon: "▣", to: "/admin/reports", disabled: true },
-      { label: "Auditoría", icon: "☑", to: "/admin/audit", disabled: true },
-      { label: "Configuración", icon: "⚙", to: "/admin/settings", disabled: true }
-    ];
-  }
+const navigationByRole = {
+  admin: [
+    { labelKey: "navigation.dashboard", to: "/admin/dashboard", icon: "pi pi-table" },
+    { labelKey: "navigation.staffManagement", to: "/admin/staff/list", icon: "pi pi-users" },
+    { labelKey: "navigation.invitations", to: "/admin/invitations", icon: "pi pi-envelope" },
+    { labelKey: "navigation.subscription", to: "/admin/subscription", icon: "pi pi-wallet" },
+    { labelKey: "navigation.reports", to: "/admin/reports", icon: "pi pi-chart-bar" },
+    { labelKey: "navigation.audit", to: "/admin/audit", icon: "pi pi-check-square" },
+    { labelKey: "navigation.settings", to: "/admin/settings", icon: "pi pi-cog" }
+  ],
+  clinical_supervisor: [
+    { labelKey: "navigation.dashboard", to: "/supervisor/dashboard", icon: "pi pi-table" },
+    { labelKey: "navigation.riskStaff", to: "/supervisor/risk-staff", icon: "pi pi-exclamation-triangle" },
+    { labelKey: "navigation.clinicalAlerts", to: "/supervisor/alerts", icon: "pi pi-bell" },
+    { labelKey: "navigation.anomalies", to: "/supervisor/anomalies", icon: "pi pi-heart" },
+    { labelKey: "navigation.preventiveActions", to: "/supervisor/preventive-actions", icon: "pi pi-check" },
+    { labelKey: "navigation.settings", to: "/supervisor/settings", icon: "pi pi-cog" }
+  ],
+  medical_staff: [
+    { labelKey: "navigation.iotSummary", to: "/medical-staff/status", icon: "pi pi-table" },
+    { labelKey: "navigation.myCortisol", to: "/medical-staff/cortisol", icon: "pi pi-circle" },
+    { labelKey: "navigation.myShifts", to: "/medical-staff/shifts", icon: "pi pi-clock" },
+    { labelKey: "navigation.myRecovery", to: "/medical-staff/recovery", icon: "pi pi-sparkles" },
+    { labelKey: "navigation.settings", to: "/medical-staff/settings", icon: "pi pi-cog" }
+  ]
+};
 
-  if (currentRole.value === "clinical_supervisor") {
-    return [
-      { label: "Dashboard", icon: "▦", to: "/supervisor/dashboard" },
-      { label: "Personal en riesgo", icon: "⚠", to: "/supervisor/risk-staff", disabled: true },
-      { label: "Alertas clínicas", icon: "●", to: "/supervisor/alerts", disabled: true },
-      { label: "Anomalías", icon: "◇", to: "/supervisor/anomalies", disabled: true },
-      { label: "Acciones preventivas", icon: "✓", to: "/supervisor/actions", disabled: true },
-      { label: "Configuración", icon: "⚙", to: "/supervisor/settings", disabled: true }
-    ];
-  }
-
-  return [
-    { label: "Resumen IoT", icon: "▦", to: "/medical-staff/status" },
-    { label: "Mi cortisol", icon: "◉", to: "/medical-staff/cortisol", disabled: true },
-    { label: "Mis turnos", icon: "◷", to: "/medical-staff/shifts", disabled: true },
-    { label: "Mi recuperación", icon: "✦", to: "/medical-staff/recovery", disabled: true },
-    { label: "Configuración", icon: "⚙", to: "/medical-staff/settings", disabled: true }
-  ];
-});
+const navigationItems = computed(() => navigationByRole[userRole.value] || []);
 
 /**
- * Checks whether a menu option is active.
+ * Checks whether the given navigation item is active.
  *
- * @param {string} path - Menu option path.
- * @returns {boolean} True when the route starts with the given path.
+ * @param {Object} item - Navigation item.
+ * @returns {boolean} True if the current route matches the item path.
  */
-function isActive(path) {
-  return route.path === path || route.path.startsWith(`${path}/`);
+function isActiveRoute(item) {
+  return route.path === item.to || route.path.startsWith(`${item.to}/`);
+}
+
+/**
+ * Clears the session and redirects to sign in.
+ *
+ * @returns {void}
+ */
+function signOut() {
+  localStorage.removeItem("cortisense_user");
+  router.push("/auth/sign-in");
 }
 </script>
 
 <template>
   <aside class="app-sidebar">
-    <div class="sidebar-header">
-      <div class="brand-mark">✦</div>
-      <div>
-        <h1>CortiSense</h1>
-        <p>Health Monitoring</p>
-      </div>
-    </div>
+    <section class="brand-section">
+      <router-link class="brand" to="/">
+        <span class="brand-symbol">✦</span>
+        <span>
+          <strong>CortiSense</strong>
+          <small>Health Monitoring</small>
+        </span>
+      </router-link>
+    </section>
 
-    <div class="user-card" v-if="currentUser">
+    <section class="user-card">
       <div class="user-avatar">
-        {{ currentUser.firstName?.charAt(0) }}{{ currentUser.lastName?.charAt(0) }}
+        {{ userInitials }}
       </div>
 
-      <div>
-        <strong>{{ currentUser.firstName }} {{ currentUser.lastName }}</strong>
-        <small>{{ currentUser.email }}</small>
+      <div class="user-info">
+        <strong>{{ userFullName }}</strong>
+        <span>{{ userEmail }}</span>
       </div>
-    </div>
+    </section>
 
-    <nav class="sidebar-nav">
-      <span class="menu-label">{{ menuTitle }}</span>
+    <p class="menu-title">{{ menuTitle }}</p>
 
-      <template v-for="item in menuItems" :key="item.label">
-        <router-link
-            v-if="!item.disabled"
-            class="nav-item"
-            :class="{ active: isActive(item.to) }"
-            :to="item.to"
-        >
-          <span class="nav-icon">{{ item.icon }}</span>
-          <span>{{ item.label }}</span>
-        </router-link>
-
-        <button v-else class="nav-item disabled" type="button">
-          <span class="nav-icon">{{ item.icon }}</span>
-          <span>{{ item.label }}</span>
-        </button>
-      </template>
+    <nav class="navigation" aria-label="Main navigation">
+      <router-link
+          v-for="item in navigationItems"
+          :key="item.to"
+          :to="item.to"
+          class="navigation-item"
+          :class="{ active: isActiveRoute(item) }"
+      >
+        <i :class="item.icon" />
+        <span>{{ t(item.labelKey) }}</span>
+      </router-link>
     </nav>
 
-    <div class="sidebar-footer">
-      <logout-button />
-    </div>
+    <section class="sidebar-footer">
+      <button class="logout-button" type="button" @click="signOut">
+        <i class="pi pi-sign-out" />
+        <span>{{ t("common.logout") }}</span>
+      </button>
+    </section>
   </aside>
 </template>
 
 <style scoped>
 .app-sidebar {
-  width: 292px;
+  width: 304px;
   min-height: 100vh;
-  background: linear-gradient(180deg, #0e2433 0%, #163142 100%);
+  background: linear-gradient(180deg, #0e2433 0%, #123444 100%);
   color: #ffffff;
-  padding: 28px 20px;
   display: flex;
   flex-direction: column;
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
+  padding: 28px 20px;
 }
 
-.sidebar-header {
+.brand-section {
+  margin-bottom: 32px;
+}
+
+.brand {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 28px;
+  color: #ffffff;
+  text-decoration: none;
 }
 
-.brand-mark {
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  background: rgba(69, 221, 229, 0.18);
-  color: var(--cs-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  font-weight: 800;
-}
-
-.sidebar-header h1 {
-  margin: 0;
+.brand-symbol {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: rgba(69, 221, 229, 0.15);
+  color: var(--cs-primary, #45dde5);
   font-size: 22px;
-  font-weight: 800;
 }
 
-.sidebar-header p {
-  margin: 2px 0 0;
-  color: #a9c5cc;
-  font-size: 12px;
-  font-weight: 600;
+.brand strong {
+  display: block;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.brand small {
+  display: block;
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .user-card {
   display: flex;
+  gap: 14px;
   align-items: center;
-  gap: 12px;
-  padding: 14px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(153, 255, 246, 0.12);
+  padding: 16px;
   margin-bottom: 28px;
+  border: 1px solid rgba(153, 255, 246, 0.13);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .user-avatar {
-  width: 42px;
-  height: 42px;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
   border-radius: 14px;
-  background: var(--cs-primary);
-  color: var(--cs-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: var(--cs-primary, #45dde5);
+  color: var(--cs-dark, #0e2433);
   font-weight: 800;
 }
 
-.user-card strong {
+.user-info {
+  min-width: 0;
+}
+
+.user-info strong {
   display: block;
-  font-size: 13px;
+  color: #ffffff;
+  font-size: 14px;
   font-weight: 800;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.user-card small {
+.user-info span {
   display: block;
   margin-top: 4px;
-  color: #a9c5cc;
-  font-size: 11px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.sidebar-nav {
+.menu-title {
+  margin: 0 8px 14px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.navigation {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  flex: 1;
+  gap: 10px;
 }
 
-.menu-label {
-  margin: 0 0 8px 8px;
-  color: #a9c5cc;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 11px;
-  font-weight: 800;
-}
-
-.nav-item {
-  min-height: 48px;
-  border-radius: 14px;
-  padding: 0 14px;
+.navigation-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  color: #d8eef2;
-  background: transparent;
-  border: none;
+  gap: 16px;
+  min-height: 50px;
+  padding: 0 18px;
+  border-radius: 15px;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  font-size: 15px;
   font-weight: 800;
-  cursor: pointer;
-  text-align: left;
-  transition: 0.2s ease;
+  transition: all 0.2s ease;
 }
 
-.nav-item:hover,
-.nav-item.active {
+.navigation-item i {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+}
+
+.navigation-item:hover {
+  background: rgba(69, 221, 229, 0.1);
+  color: #ffffff;
+}
+
+.navigation-item.active {
   background: rgba(69, 221, 229, 0.18);
-  color: var(--cs-primary);
+  color: var(--cs-primary, #45dde5);
 }
 
-.nav-item.disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
-
-.nav-icon {
-  width: 22px;
-  text-align: center;
+.navigation-item.active i {
+  color: var(--cs-primary, #45dde5);
 }
 
 .sidebar-footer {
-  margin-top: 24px;
+  margin-top: auto;
+}
+
+.logout-button {
+  width: 100%;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 22px;
+  border: none;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background: rgba(69, 221, 229, 0.14);
 }
 </style>

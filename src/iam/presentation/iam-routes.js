@@ -1,18 +1,27 @@
 const SignIn = () => import("./views/sign-in.vue");
 const SignUp = () => import("./views/sign-up.vue");
 
+/**
+ * Identity & Access Management routes.
+ *
+ * These routes are public and do not use the internal application layout.
+ */
 const iamRoutes = [
     {
-        path: "/sign-in",
+        path: "/auth/sign-in",
         name: "sign-in",
         component: SignIn,
-        meta: { title: "Sign In" }
+        meta: {
+            title: "Sign In"
+        }
     },
     {
-        path: "/sign-up",
+        path: "/auth/sign-up",
         name: "sign-up",
         component: SignUp,
-        meta: { title: "Complete Registration" }
+        meta: {
+            title: "Sign Up"
+        }
     }
 ];
 

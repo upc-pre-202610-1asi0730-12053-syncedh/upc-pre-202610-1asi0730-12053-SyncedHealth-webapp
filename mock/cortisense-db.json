@@ -2,34 +2,34 @@
   "users": [
     {
       "id": "u-001",
+      "firstName": "Marcelo",
+      "lastName": "Administrador",
       "email": "admin@cortisense.com",
       "password": "admin123",
       "role": "admin",
       "status": "active",
-      "firstName": "Marcelo",
-      "lastName": "Administrador",
       "token": "mock-token-admin-001",
       "medicalStaffId": null
     },
     {
       "id": "u-002",
+      "firstName": "Claudia",
+      "lastName": "Supervisora",
       "email": "supervisor@cortisense.com",
       "password": "supervisor123",
       "role": "clinical_supervisor",
       "status": "active",
-      "firstName": "Claudia",
-      "lastName": "Supervisora",
       "token": "mock-token-supervisor-001",
       "medicalStaffId": "ms-002"
     },
     {
       "id": "u-003",
+      "firstName": "Carlos",
+      "lastName": "Mendoza",
       "email": "doctor@cortisense.com",
       "password": "doctor123",
       "role": "medical_staff",
       "status": "active",
-      "firstName": "Carlos",
-      "lastName": "Mendoza",
       "token": "mock-token-medical-001",
       "medicalStaffId": "ms-001"
     }
@@ -48,5 +48,232 @@
       "status": "pending"
     }
   ],
-  "medical_staff": []
+  "medical_staff": [
+    {
+      "id": "ms-001",
+      "firstName": "Carlos",
+      "lastName": "Mendoza",
+      "documentNumber": "74859612",
+      "email": "doctor.carlos@cortisense.com",
+      "workArea": "Emergencia",
+      "area": "Emergencia",
+      "specialty": "Cardiología",
+      "role": "medical_staff",
+      "staffRole": "medical_staff",
+      "status": "active",
+      "riskLevel": "high",
+      "fatigueLevel": 78,
+      "assignedDeviceId": "dev-001"
+    },
+    {
+      "id": "ms-002",
+      "firstName": "Valeria",
+      "lastName": "Rojas",
+      "documentNumber": "71234589",
+      "email": "doctor.valeria@cortisense.com",
+      "workArea": "UCI",
+      "area": "UCI",
+      "specialty": "Cuidados Intensivos",
+      "role": "clinical_supervisor",
+      "staffRole": "clinical_supervisor",
+      "status": "active",
+      "riskLevel": "moderate",
+      "fatigueLevel": 55,
+      "assignedDeviceId": "dev-002"
+    },
+    {
+      "id": "ms-003",
+      "firstName": "Ana",
+      "lastName": "Torres",
+      "documentNumber": "70321456",
+      "email": "doctor.ana@cortisense.com",
+      "workArea": "Pediatría",
+      "area": "Pediatría",
+      "specialty": "Pediatría",
+      "role": "medical_staff",
+      "staffRole": "medical_staff",
+      "status": "inactive",
+      "riskLevel": "low",
+      "fatigueLevel": 28,
+      "assignedDeviceId": "dev-003"
+    },
+    {
+      "id": "ms-004",
+      "firstName": "Javier",
+      "lastName": "Salazar",
+      "documentNumber": "71987654",
+      "email": "doctor.javier@cortisense.com",
+      "workArea": "Emergencia",
+      "area": "Emergencia",
+      "specialty": "Medicina de Emergencias",
+      "role": "medical_staff",
+      "staffRole": "medical_staff",
+      "status": "active",
+      "riskLevel": "critical",
+      "fatigueLevel": 92,
+      "assignedDeviceId": null
+    }
+  ],
+  "devices": [
+    {
+      "id": "dev-001",
+      "medicalStaffId": "ms-001",
+      "deviceName": "CortiBand Pro",
+      "deviceType": "Smartwatch",
+      "serialNumber": "CBP-2026-001",
+      "syncStatus": "synced",
+      "batteryLevel": 84,
+      "lastSyncAt": "2026-05-15T08:30:00"
+    },
+    {
+      "id": "dev-002",
+      "medicalStaffId": "ms-002",
+      "deviceName": "CortiBand Pro",
+      "deviceType": "Smartwatch",
+      "serialNumber": "CBP-2026-002",
+      "syncStatus": "synced",
+      "batteryLevel": 76,
+      "lastSyncAt": "2026-05-15T08:45:00"
+    },
+    {
+      "id": "dev-003",
+      "medicalStaffId": "ms-003",
+      "deviceName": "CortiBand Lite",
+      "deviceType": "Smartwatch",
+      "serialNumber": "CBL-2026-003",
+      "syncStatus": "synced",
+      "batteryLevel": 91,
+      "lastSyncAt": "2026-05-15T09:00:00"
+    },
+    {
+      "id": "dev-004",
+      "medicalStaffId": "ms-004",
+      "deviceName": "CortiBand Pro",
+      "deviceType": "Smartwatch",
+      "serialNumber": "CBP-2026-004",
+      "syncStatus": "delayed",
+      "batteryLevel": 22,
+      "lastSyncAt": "2026-05-15T06:20:00"
+    }
+  ],
+  "biometric_records": [
+    {
+      "id": "br-001",
+      "medicalStaffId": "ms-001",
+      "recordedAt": "2026-05-15T08:00:00",
+      "sleepHours": 5.2,
+      "heartRate": 96,
+      "steps": 4200,
+      "activityLevel": "moderate",
+      "cortisolLevel": 28.5,
+      "stressLevel": 82,
+      "fatigueScore": 78,
+      "riskLevel": "high"
+    },
+    {
+      "id": "br-002",
+      "medicalStaffId": "ms-002",
+      "recordedAt": "2026-05-15T08:00:00",
+      "sleepHours": 6.1,
+      "heartRate": 84,
+      "steps": 3100,
+      "activityLevel": "moderate",
+      "cortisolLevel": 22.4,
+      "stressLevel": 58,
+      "fatigueScore": 54,
+      "riskLevel": "moderate"
+    },
+    {
+      "id": "br-003",
+      "medicalStaffId": "ms-003",
+      "recordedAt": "2026-05-15T08:00:00",
+      "sleepHours": 7.3,
+      "heartRate": 72,
+      "steps": 2500,
+      "activityLevel": "low",
+      "cortisolLevel": 14.2,
+      "stressLevel": 30,
+      "fatigueScore": 28,
+      "riskLevel": "low"
+    },
+    {
+      "id": "br-004",
+      "medicalStaffId": "ms-004",
+      "recordedAt": "2026-05-15T08:00:00",
+      "sleepHours": 3.8,
+      "heartRate": 108,
+      "steps": 6100,
+      "activityLevel": "high",
+      "cortisolLevel": 35.7,
+      "stressLevel": 94,
+      "fatigueScore": 92,
+      "riskLevel": "critical"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "al-001",
+      "medicalStaffId": "ms-001",
+      "type": "High Fatigue",
+      "message": "High fatigue level detected after reduced sleep hours.",
+      "severity": "high",
+      "status": "pending",
+      "isRead": false,
+      "createdAt": "2026-05-15T10:15:00"
+    },
+    {
+      "id": "al-002",
+      "medicalStaffId": "ms-004",
+      "type": "Critical Fatigue",
+      "message": "Critical fatigue and stress indicators detected.",
+      "severity": "critical",
+      "status": "pending",
+      "isRead": false,
+      "createdAt": "2026-05-15T09:20:00"
+    }
+  ],
+  "shifts": [
+    {
+      "id": "sh-001",
+      "medicalStaffId": "ms-001",
+      "date": "2026-05-15",
+      "startTime": "08:00",
+      "endTime": "16:00",
+      "area": "Emergency",
+      "status": "active",
+      "workloadLevel": "high",
+      "isBlocked": false
+    },
+    {
+      "id": "sh-002",
+      "medicalStaffId": "ms-004",
+      "date": "2026-05-15",
+      "startTime": "20:00",
+      "endTime": "04:00",
+      "area": "Surgery",
+      "status": "scheduled",
+      "workloadLevel": "critical",
+      "isBlocked": true,
+      "blockedReason": "Critical fatigue level detected"
+    }
+  ],
+  "recovery_plans": [
+    {
+      "id": "rp-001",
+      "medicalStaffId": "ms-001",
+      "reason": "High fatigue level and reduced sleep hours",
+      "recommendedRestMinutes": 30,
+      "status": "pending",
+      "createdAt": "2026-05-15T10:15:00"
+    },
+    {
+      "id": "rp-002",
+      "medicalStaffId": "ms-004",
+      "reason": "Critical fatigue level and high cortisol indicator",
+      "recommendedRestMinutes": 60,
+      "status": "issued",
+      "createdAt": "2026-05-15T09:20:00"
+    }
+  ],
+  "audit_logs": []
 }
