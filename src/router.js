@@ -1,126 +1,121 @@
-import { createRouter, createWebHistory } from 'vue-router';
-// Importaciones ajustadas a la estructura de Interfaces
-import { authenticationGuard } from './iam/presentation/router/authentication.guard.js';
-import iamRoutes from './iam/presentation/router/iam-routes.js';
-import craRoutes from './cra/presentation/router/cra-routes.js';
+import { createRouter, createWebHistory } from "vue-router";
 
-// Eagerly loaded
-import Landing from './shared/presentation/views/landing.vue';
+import iamRoutes from "./iam/presentation/iam-routes.js";
+import { resolveAuthenticationRedirect } from "./iam/infrastructure/authentication.guard.js";
 
-// Lazy-loaded views
-const Dashboard    = () => import('./shared/presentation/views/dashboard.vue');
-const Unauthorized = () => import('./shared/presentation/views/unauthorized.vue');
-const PageNotFound = () => import('./shared/presentation/views/page-not-found.vue');
+const AppLayout = () => import("./shared/presentation/components/app-layout.vue");
 
-// Placeholders
-const Patients     = () => import('./shared/presentation/views/placeholder.vue');
-const Appointments = () => import('./shared/presentation/views/placeholder.vue');
-const Reports      = () => import('./shared/presentation/views/placeholder.vue');
-const Settings     = () => import('./shared/presentation/views/placeholder.vue');
+const AdminDashboard = () => import("./shared/presentation/views/admin-dashboard.vue");
+const SupervisorDashboard = () => import("./shared/presentation/views/supervisor-dashboard.vue");
+const MedicalStaffStatus = () => import("./shared/presentation/views/medical-staff-status.vue");
 
-// Layout
-import AppLayout from './shared/presentation/components/app-layout.vue';
+const Unauthorized = () => import("./shared/presentation/views/unauthorized.vue");
+const PageNotFound = () => import("./shared/presentation/views/page-not-found.vue");
 
 const routes = [
-    // RUTAS PÚBLICAS
     {
-        path: '/',
-        name: 'home',
-        component: Landing,
-        meta: { title: 'Welcome', requiresAuth: false },
-    },
-    {
-        path: '/iam',
-        children: iamRoutes,
-    },
-    {
-        path: '/unauthorized',
-        name: 'unauthorized',
-        component: Unauthorized,
-        meta: { title: 'Access Restricted' },
+        path: "/",
+        redirect: "/sign-in"
     },
 
-    // RUTAS PROTEGIDAS
+    ...iamRoutes,
+
     {
-        path: '/app',
+        path: "/admin",
         component: AppLayout,
-        meta: { requiresAuth: true },
+        meta: {
+            requiresAuth: true,
+            roles: ["admin"]
+        },
         children: [
             {
-                path: 'dashboard',
-                name: 'dashboard',
-                component: Dashboard,
-                meta: { title: 'Dashboard', roles: ['admin', 'doctor'] },
-            },
-
-            ...craRoutes,
-
-            {
-                path: 'patients',
-                name: 'patients',
-                component: Patients,
+                path: "dashboard",
+                name: "admin-dashboard",
+                component: AdminDashboard,
                 meta: {
-                    title: 'Patients',
-                    roles: ['admin', 'doctor'],
-                    placeholder: { icon: 'pi-users', label: 'Patients' },
-                },
-            },
-            {
-                path: 'appointments',
-                name: 'appointments',
-                component: Appointments,
-                meta: {
-                    title: 'Appointments',
-                    roles: ['admin', 'doctor'],
-                    placeholder: { icon: 'pi-calendar', label: 'Appointments' },
-                },
-            },
-            {
-                path: 'reports',
-                name: 'reports',
-                component: Reports,
-                meta: {
-                    title: 'Reports',
-                    roles: ['admin', 'doctor'],
-                    placeholder: { icon: 'pi-chart-bar', label: 'Reports' },
-                },
-            },
-            {
-                path: 'settings',
-                name: 'settings',
-                component: Settings,
-                meta: {
-                    title: 'Settings',
-                    roles: ['admin'],
-                    placeholder: { icon: 'pi-cog', label: 'Settings' },
-                },
-            },
-        ],
+                    title: "Admin Dashboard"
+                }
+            }
+        ]
     },
 
-    // FALLBACK
     {
-        path: '/:pathMatch(.*)*',
-        name: 'not-found',
-        component: PageNotFound,
-        meta: { title: 'Page Not Found' },
+        path: "/supervisor",
+        component: AppLayout,
+        meta: {
+            requiresAuth: true,
+            roles: ["clinical_supervisor"]
+        },
+        children: [
+            {
+                path: "dashboard",
+                name: "supervisor-dashboard",
+                component: SupervisorDashboard,
+                meta: {
+                    title: "Supervisor Dashboard"
+                }
+            }
+        ]
     },
+
+    {
+        path: "/medical-staff",
+        component: AppLayout,
+        meta: {
+            requiresAuth: true,
+            roles: ["medical_staff"]
+        },
+        children: [
+            {
+                path: "status",
+                name: "medical-staff-status",
+                component: MedicalStaffStatus,
+                meta: {
+                    title: "My Status"
+                }
+            }
+        ]
+    },
+
+    {
+        path: "/unauthorized",
+        name: "unauthorized",
+        component: Unauthorized,
+        meta: {
+            title: "Unauthorized"
+        }
+    },
+
+    {
+        path: "/:pathMatch(.*)*",
+        name: "not-found",
+        component: PageNotFound,
+        meta: {
+            title: "Page Not Found"
+        }
+    }
 ];
 
 const router = createRouter({
-    history: createWebHistory(),
-    routes,
-    scrollBehavior: () => ({ top: 0 }),
+    history: createWebHistory(import.meta.env.BASE_URL),
+    routes
 });
 
 /**
- * Global Navigation Guard
+ * Global navigation guard.
+ *
+ * Protects private routes and validates role-based access.
  */
 router.beforeEach((to, from, next) => {
-    const baseTitle = 'CortiSense';
-    document.title = to.meta.title ? `${baseTitle} · ${to.meta.title}` : baseTitle;
+    document.title = `CortiSense - ${to.meta.title || "Platform"}`;
 
-    authenticationGuard(to, from, next);
+    const redirectPath = resolveAuthenticationRedirect(to);
+
+    if (redirectPath) {
+        return next(redirectPath);
+    }
+
+    return next();
 });
 
 export default router;
