@@ -1,242 +1,52 @@
 {
   "users": [
     {
-      "id": "1",
-      "firstName": "Ana",
-      "lastName": "García",
-      "email": "admin@medisync.com",
-      "password": "medisync2026",
+      "id": "u-001",
+      "email": "admin@cortisense.com",
+      "password": "admin123",
       "role": "admin",
-      "specialty": "",
-      "token": "mock-token-admin-001"
+      "status": "active",
+      "firstName": "Marcelo",
+      "lastName": "Administrador",
+      "token": "mock-token-admin-001",
+      "medicalStaffId": null
     },
     {
-      "id": "2",
+      "id": "u-002",
+      "email": "supervisor@cortisense.com",
+      "password": "supervisor123",
+      "role": "clinical_supervisor",
+      "status": "active",
+      "firstName": "Claudia",
+      "lastName": "Supervisora",
+      "token": "mock-token-supervisor-001",
+      "medicalStaffId": "ms-002"
+    },
+    {
+      "id": "u-003",
+      "email": "doctor@cortisense.com",
+      "password": "doctor123",
+      "role": "medical_staff",
+      "status": "active",
       "firstName": "Carlos",
       "lastName": "Mendoza",
-      "email": "doctor@medisync.com",
-      "password": "medisync2026",
-      "role": "doctor",
-      "specialty": "Cardiology",
-      "token": "mock-token-doctor-002"
-    },
-    {
-      "firstName": "Rosa",
-      "lastName": "Calloapaza",
-      "email": "dulcerosi2012@gmail.com",
-      "password": "rosi1234",
-      "role": "doctor",
-      "specialty": "Cardiology",
-      "token": "mock-token-1778776271831",
-      "id": "yNv7a0d"
-    },
-    {
-      "firstName": "Kurogumo",
-      "lastName": "Shirakumo",
-      "email": "krgmshrkm@gmail.com",
-      "password": "krgmshrkm",
-      "role": "admin",
-      "specialty": "",
-      "token": "mock-token-1778777188322",
-      "id": "vD-gmFO"
-    },
-    {
-      "firstName": "Camilo",
-      "lastName": "Sesto",
-      "email": "camilosesto@hotmail.com",
-      "password": "camilosesto",
-      "role": "admin",
-      "specialty": "",
-      "token": "mock-token-1778777299074",
-      "id": "BHf_crk"
-    },
-    {
-      "firstName": "Carla",
-      "lastName": "Campos",
-      "email": "xiuxiu@hotmail.com",
-      "password": "xiuxiu1234",
-      "role": "admin",
-      "specialty": "",
-      "token": "mock-token-1778786477588",
-      "id": "Ys-xetf"
-    },
-    {
-      "firstName": "justinn",
-      "lastName": "mauricio",
-      "email": "justinn@gmail.com",
-      "password": "jus123",
-      "role": "doctor",
-      "specialty": "neurocirugia",
-      "token": "mock-token-1778791562665",
-      "id": "NXfh06X"
+      "token": "mock-token-medical-001",
+      "medicalStaffId": "ms-001"
     }
   ],
-  "shifts": [
+  "invitations": [
     {
-      "id": "1",
-      "userId": "1",
-      "startTime": "08:00",
-      "endTime": "16:00",
-      "area": "Emergency",
-      "status": "active"
+      "id": "inv-001",
+      "email": "nuevo.medico@cortisense.com",
+      "role": "medical_staff",
+      "status": "pending"
     },
     {
-      "id": "2",
-      "userId": "1",
-      "startTime": "20:00",
-      "endTime": "04:00",
-      "area": "ICU",
-      "status": "scheduled"
+      "id": "inv-002",
+      "email": "nuevo.supervisor@cortisense.com",
+      "role": "clinical_supervisor",
+      "status": "pending"
     }
   ],
-  "biometric_alerts": [
-    {
-      "id": "1",
-      "userId": "1",
-      "type": "High Stress",
-      "value": "95 bpm / High Cortisol",
-      "timestamp": "10:15 AM",
-      "severity": "critical"
-    },
-    {
-      "id": "2",
-      "userId": "1",
-      "type": "Rest Suggestion",
-      "value": "Break recommended",
-      "timestamp": "12:00 PM",
-      "severity": "warning"
-    }
-  ],
-  "medicalDevices": [
-    {
-      "id": "md-001",
-      "medicalStaffId": "2",
-      "name": "FitBand Pro",
-      "type": "wearable",
-      "syncStatus": "connected",
-      "lastSyncAt": "2026-05-14 18:36:45"
-    },
-    {
-      "id": "md-002",
-      "medicalStaffId": "yNv7a0d",
-      "name": "PulseWatch X",
-      "type": "smartwatch",
-      "syncStatus": "connected",
-      "lastSyncAt": "2026-05-14 18:55:32"
-    },
-    {
-      "id": "md-1778791611002",
-      "medicalStaffId": "NXfh06X",
-      "name": "redmi",
-      "type": "smartwatch",
-      "syncStatus": "connected",
-      "lastSyncAt": "2026-05-14 18:36:59"
-    }
-  ],
-  "biometricData": [
-    {
-      "id": "bio-1778794914428-2-247",
-      "medicalStaffId": "2",
-      "heartRate": 81,
-      "sleepHours": 6.8,
-      "activityLevel": "high",
-      "recordedAt": "2026-05-13 22:10"
-    },
-    {
-      "id": "bio-1778794914477-yNv7a0d-910",
-      "medicalStaffId": "yNv7a0d",
-      "heartRate": 75,
-      "sleepHours": 7.2,
-      "activityLevel": "moderate",
-      "recordedAt": "2026-05-13 22:10"
-    },
-    {
-      "id": "bio-1778794914503-NXfh06X-602",
-      "medicalStaffId": "NXfh06X",
-      "heartRate": 95,
-      "sleepHours": 6.1,
-      "activityLevel": "high",
-      "recordedAt": "2026-05-13 22:10"
-    },
-    {
-      "id": "bio-1778802918055-2-60",
-      "medicalStaffId": "2",
-      "heartRate": 99,
-      "sleepHours": 4.6,
-      "activityLevel": "high",
-      "recordedAt": "2026-05-14 18:55:18"
-    },
-    {
-      "id": "bio-1778802918106-NXfh06X-440",
-      "medicalStaffId": "NXfh06X",
-      "heartRate": 65,
-      "sleepHours": 6.3,
-      "activityLevel": "high",
-      "recordedAt": "2026-05-14 18:55:18"
-    },
-    {
-      "id": "bio-1778802918962-2-48",
-      "medicalStaffId": "2",
-      "heartRate": 90,
-      "sleepHours": 7.3,
-      "activityLevel": "low",
-      "recordedAt": "2026-05-14 18:55:18"
-    },
-    {
-      "id": "bio-1778802919020-NXfh06X-553",
-      "medicalStaffId": "NXfh06X",
-      "heartRate": 68,
-      "sleepHours": 7.7,
-      "activityLevel": "moderate",
-      "recordedAt": "2026-05-14 18:55:18"
-    },
-    {
-      "id": "bio-1778802921803-2-134",
-      "medicalStaffId": "2",
-      "heartRate": 98,
-      "sleepHours": 7,
-      "activityLevel": "moderate",
-      "recordedAt": "2026-05-14 18:55:21"
-    },
-    {
-      "id": "bio-1778802921838-NXfh06X-689",
-      "medicalStaffId": "NXfh06X",
-      "heartRate": 69,
-      "sleepHours": 5.3,
-      "activityLevel": "moderate",
-      "recordedAt": "2026-05-14 18:55:21"
-    },
-    {
-      "id": "bio-1778802922924-2-86",
-      "medicalStaffId": "2",
-      "heartRate": 72,
-      "sleepHours": 7.2,
-      "activityLevel": "high",
-      "recordedAt": "2026-05-14 18:55:22"
-    },
-    {
-      "id": "bio-1778802922967-NXfh06X-622",
-      "medicalStaffId": "NXfh06X",
-      "heartRate": 76,
-      "sleepHours": 6.1,
-      "activityLevel": "high",
-      "recordedAt": "2026-05-14 18:55:22"
-    },
-    {
-      "id": "bio-1778802926204-2-263",
-      "medicalStaffId": "2",
-      "heartRate": 102,
-      "sleepHours": 6,
-      "activityLevel": "moderate",
-      "recordedAt": "2026-05-14 18:55:26"
-    },
-    {
-      "id": "bio-1778802926256-NXfh06X-539",
-      "medicalStaffId": "NXfh06X",
-      "heartRate": 102,
-      "sleepHours": 7.2,
-      "activityLevel": "moderate",
-      "recordedAt": "2026-05-14 18:55:26"
-    }
-  ]
+  "medical_staff": []
 }

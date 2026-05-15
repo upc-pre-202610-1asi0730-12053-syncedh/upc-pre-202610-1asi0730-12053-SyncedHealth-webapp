@@ -1,40 +1,41 @@
 <script setup>
-import SidebarNav from './sidenav-bar.vue';
-import AppHeader from './app-header.vue';
+/**
+ * App Layout Component.
+ *
+ * Provides the authenticated internal application shell.
+ * It contains the sidebar, topbar and nested route content.
+ */
+
+import AppSidebar from "./app-sidebar.vue";
+import AppTopbar from "./app-topbar.vue";
 </script>
 
 <template>
-  <div class="app-shell">
-    <SidebarNav />
+  <div class="app-layout">
+    <app-sidebar />
 
-    <div class="app-main">
-      <AppHeader />
+    <section class="layout-content">
+      <app-topbar />
 
-      <div class="app-content">
-        <RouterView v-slot="{ Component, route }">
-          <component :is="Component" :key="route.name" />
-        </RouterView>
-      </div>
-    </div>
+      <main class="layout-main">
+        <router-view />
+      </main>
+    </section>
   </div>
 </template>
 
 <style scoped>
-.app-shell {
-  display: flex;
+.app-layout {
+  min-height: 100vh;
+  background: #f7fbfc;
+}
+
+.layout-content {
+  margin-left: 292px;
   min-height: 100vh;
 }
 
-.app-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  background: var(--ms-bg);
-}
-
-.app-content {
-  flex: 1;
-  overflow-y: auto;
+.layout-main {
+  min-height: calc(100vh - 96px);
 }
 </style>
