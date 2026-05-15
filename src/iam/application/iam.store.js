@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
-import { IamApi } from '../../../infrastructure/iam-api.js';
-import { UserAssembler } from '../../../infrastructure/user.assembler.js';
+import { IamApi } from '../infrastructure/iam-api.js';
+import { UserAssembler } from '../infrastructure/user.assembler.js';
 
 const iamApi = new IamApi();
 

@@ -11,7 +11,7 @@ import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 
 import LanguageSwitcher from '../../../shared/presentation/components/language-switcher.vue';
-import useIamStore from '../../application/internal/services/iam.store.js';
+import useIamStore from '../../application/iam.store.js';
 import { SignInCommand } from '../../domain/commands/sign-in.command.js';
 
 const router = useRouter();

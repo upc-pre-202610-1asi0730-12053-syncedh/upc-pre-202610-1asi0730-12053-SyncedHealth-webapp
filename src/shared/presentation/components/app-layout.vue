@@ -1,11 +1,4 @@
 <script setup>
-/**
- * App Layout Component.
- *
- * Provides the authenticated internal application shell.
- * It contains the sidebar, topbar and nested route content.
- */
-
 import AppSidebar from "./app-sidebar.vue";
 import AppTopbar from "./app-topbar.vue";
 </script>
@@ -14,28 +7,43 @@ import AppTopbar from "./app-topbar.vue";
   <div class="app-layout">
     <app-sidebar />
 
-    <section class="layout-content">
+    <main class="app-main">
       <app-topbar />
 
-      <main class="layout-main">
-        <router-view />
-      </main>
-    </section>
+      <section class="app-content">
+        <router-view :key="$route.fullPath" />
+      </section>
+    </main>
   </div>
 </template>
 
 <style scoped>
 .app-layout {
   min-height: 100vh;
+  display: grid;
+  grid-template-columns: 304px 1fr;
   background: #f7fbfc;
 }
 
-.layout-content {
-  margin-left: 292px;
+.app-main {
+  min-width: 0;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.layout-main {
-  min-height: calc(100vh - 96px);
+.app-content {
+  flex: 1;
+  padding: 48px 56px;
+}
+
+@media (max-width: 900px) {
+  .app-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .app-content {
+    padding: 32px 24px;
+  }
 }
 </style>
