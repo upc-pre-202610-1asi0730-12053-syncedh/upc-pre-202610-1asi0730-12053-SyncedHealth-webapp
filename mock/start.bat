@@ -1,1 +1,0 @@
-json-server --watch cortisense-db.json --routes routes.json

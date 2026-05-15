@@ -1,38 +1,34 @@
-import axios from "axios";
+import axios from 'axios';
 
-const platformApi = import.meta.env.VITE_CORTISENSE_API_URL;
+const apiUrl = import.meta.env.VITE_CORTISENSE_API_URL;
 
 /**
- * Shared infrastructure base class that configures the HTTP client.
+ * Shared base API for CortiSense infrastructure adapters.
+ *
+ * Centralizes the Axios instance configuration so bounded contexts do not
+ * instantiate HTTP clients directly.
  *
  * @class BaseApi
  */
 export class BaseApi {
-    /**
-     * @private
-     * Axios HTTP client instance
-     * @type {import('axios').AxiosInstance}
-     */
     #http;
 
     /**
-     * Initializes the Axios HTTP client with the base URL from environment variables
+     * Initializes the Axios client with the configured API base URL.
      */
     constructor() {
         this.#http = axios.create({
-            baseURL: platformApi,
+            baseURL: apiUrl,
             headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            },
+                'Content-Type': 'application/json'
+            }
         });
-        // Add interceptors for request/response if needed
-        //this.#http.interceptors.request.use(iamInterceptor);
     }
 
     /**
-     * Returns the configured Axios HTTP client.
-     * @returns {import('axios').AxiosInstance}
+     * Configured Axios HTTP client.
+     *
+     * @returns {import('axios').AxiosInstance} Axios instance.
      */
     get http() {
         return this.#http;

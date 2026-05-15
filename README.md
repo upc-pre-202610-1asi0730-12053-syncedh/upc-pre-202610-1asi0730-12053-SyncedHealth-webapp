@@ -29,7 +29,7 @@ The platform focuses on preventing medical burnout by integrating biometric data
 
 ### IAM Context
 - Handles security and user profiles.
-- Manages SignInCommand and SignUpCommand workflows.
+- Manages SignInCommand and CompleteRegistrationCommand workflows.
 - Implements role-based access control (RBAC) for Administrators and Medical Staff.
 - Persists session state through Pinia and local storage restoration.
 

@@ -6,7 +6,6 @@
   "nav": {
     "home": "Inicio",
     "dashboard": "Panel",
-    "metrics": "Métricas",
     "biometrics": "Biometría",
     "devices": "Dispositivos",
     "patients": "Pacientes",
@@ -81,30 +80,6 @@
     "morning": "Día",
     "afternoon": "Tarde",
     "evening": "Noche"
-  },
-  "metrics": {
-    "doctor_tabs": {
-      "summary": "Resumen IoT",
-      "cortisol": "Mi Cortisol",
-      "shifts": "Mis Turnos"
-    },
-    "admin_tabs": {
-      "real_time": "Monitoreo en Tiempo Real",
-      "trends": "Tendencia Hospitalaria",
-      "availability": "Disponibilidad de Personal"
-    },
-    "titles": {
-      "admin_dashboard": "Panel de Control Operativo",
-      "admin_subtitle": "Supervisión en tiempo real del personal médico",
-      "doctor_summary": "Resumen General IoT",
-      "doctor_cortisol": "Mi Cortisol Semanal",
-      "doctor_shifts": "Mis Turnos Programados"
-    },
-    "status": {
-      "critico": "Crítico",
-      "advertencia": "Advertencia",
-      "estable": "Estable"
-    }
   },
   "cra": {
     "deviceManagement": {
@@ -191,6 +166,32 @@
   },
   "common": {
     "loading": "Cargando…",
+    "status": "Estado",
+    "risk": "Riesgo",
+    "fatigue": "Fatiga",
+    "actions": "Acciones",
+    "view": "Ver",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "active": "Activo",
+    "inactive": "Inactivo",
+    "medicalStaff": "Personal médico",
+    "clinicalSupervisor": "Supervisor clínico",
+    "low": "Bajo",
+    "moderate": "Moderado",
+    "high": "Alto",
+    "critical": "Crítico",
+    "noResults": "No se encontraron registros de personal médico.",
+    "newTitle": "Registrar personal médico",
+    "editTitle": "Editar personal médico",
+    "detailTitle": "Detalle del personal médico",
+    "formSubtitle": "Completa la información profesional y operativa del personal.",
+    "detailSubtitle": "Consulta la información personal, profesional y operativa del colaborador.",
+    "firstName": "Nombres",
+    "lastName": "Apellidos",
+    "documentNumber": "Documento",
+    "phone": "Teléfono",
+    "assignedDevice": "Dispositivo asignado",
     "save": "Guardar",
     "cancel": "Cancelar",
     "confirm": "Confirmar",

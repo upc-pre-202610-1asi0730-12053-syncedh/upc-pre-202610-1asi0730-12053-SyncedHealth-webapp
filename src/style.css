@@ -1,95 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Brand palette */
-  --ms-primary:       #0d6e6e;
-  --ms-primary-light: #14a8a8;
-  --ms-primary-dark:  #084f4f;
-  --ms-accent:        #f0a500;
-  --ms-accent-light:  #ffc542;
-  --ms-danger:        #e05252;
-  --ms-success:       #3dbe78;
+  --cs-primary: #45DDE5;
+  --cs-primary-light: #99FFF6;
+  --cs-primary-medium: #68EAE8;
+  --cs-primary-strong: #41EFF2;
 
-  /* Neutrals */
-  --ms-bg:            #f4f6f8;
-  --ms-surface:       #ffffff;
-  --ms-surface-2:     #eef1f5;
-  --ms-border:        #dde3ec;
-  --ms-text:          #1a2535;
-  --ms-text-muted:    #6b7a90;
-  --ms-text-light:    #9aa5b8;
+  --cs-background: #EDFFFB;
+  --cs-dark: #0E2433;
+  --cs-dark-soft: #163142;
 
-  /* Sidebar */
-  --ms-sidebar-bg:    #0d1f2d;
-  --ms-sidebar-text:  #c8d5e8;
-  --ms-sidebar-hover: #162d41;
-  --ms-sidebar-active:#0d6e6e;
-  --ms-sidebar-w:     260px;
+  --cs-black: #000000;
+  --cs-gray-light: #D9D9D9;
+  --cs-gray: #949494;
+  --cs-gray-dark: #4F555A;
+  --cs-white: #FFFFFF;
 
-  /* Typography */
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-  font-weight: 400;
-  color: var(--ms-text);
-  background-color: var(--ms-bg);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  color: var(--cs-dark);
+  background: var(--cs-background);
 }
 
-*, *::before, *::after {
+* {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
+  margin: 0;
+  min-width: 320px;
   min-height: 100vh;
-  background: var(--ms-bg);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  background: var(--cs-background);
 }
 
-h1, h2, h3 {
-  font-family: 'DM Serif Display', serif;
-  color: var(--ms-text);
-  line-height: 1.2;
+button,
+input,
+select {
+  font-family: inherit;
 }
-
-h1 { font-size: 2rem; }
-h2 { font-size: 1.5rem; }
-h3 { font-size: 1.15rem; }
 
 a {
-  color: var(--ms-primary);
+  color: var(--cs-primary);
   text-decoration: none;
-  transition: color .2s;
-}
-a:hover { color: var(--ms-primary-light); }
-
-button { font-family: inherit; }
-
-/* Scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--ms-border); border-radius: 3px; }
-
-/* PrimeVue overrides */
-.p-button-primary {
-  background: var(--ms-primary) !important;
-  border-color: var(--ms-primary) !important;
-}
-.p-button-primary:hover {
-  background: var(--ms-primary-dark) !important;
-  border-color: var(--ms-primary-dark) !important;
+  font-weight: 700;
 }
 
-/* Utility */
-.text-muted { color: var(--ms-text-muted); }
-.card-ms {
-  background: var(--ms-surface);
-  border: 1px solid var(--ms-border);
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+a:hover {
+  color: var(--cs-primary-strong);
 }

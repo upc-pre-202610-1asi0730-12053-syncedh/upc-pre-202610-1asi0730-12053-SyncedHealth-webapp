@@ -6,7 +6,6 @@
   "nav": {
     "home": "Home",
     "dashboard": "Dashboard",
-    "metrics": "Metrics",
     "biometrics": "Biometrics",
     "devices": "Devices",
     "patients": "Patients",
@@ -81,30 +80,6 @@
     "morning": "Morning",
     "afternoon": "Afternoon",
     "evening": "Evening"
-  },
-  "metrics": {
-    "doctor_tabs": {
-      "summary": "IoT Summary",
-      "cortisol": "My Cortisol",
-      "shifts": "My Shifts"
-    },
-    "admin_tabs": {
-      "real_time": "Real-Time Monitoring",
-      "trends": "Hospital Trends",
-      "availability": "Staff Availability"
-    },
-    "titles": {
-      "admin_dashboard": "Operational Control Panel",
-      "admin_subtitle": "Real-time supervision of medical staff",
-      "doctor_summary": "General IoT Summary",
-      "doctor_cortisol": "My Weekly Cortisol",
-      "doctor_shifts": "My Scheduled Shifts"
-    },
-    "status": {
-      "critico": "Critical",
-      "advertencia": "Warning",
-      "estable": "Stable"
-    }
   },
   "cra": {
     "deviceManagement": {
@@ -191,6 +166,32 @@
   },
   "common": {
     "loading": "Loading…",
+    "status": "Status",
+    "risk": "Risk",
+    "fatigue": "Fatigue",
+    "actions": "Actions",
+    "view": "View",
+    "edit": "Edit",
+    "delete": "Delete",
+    "active": "Active",
+    "inactive": "Inactive",
+    "medicalStaff": "Medical staff",
+    "clinicalSupervisor": "Clinical supervisor",
+    "low": "Low",
+    "moderate": "Moderate",
+    "high": "High",
+    "critical": "Critical",
+    "noResults": "No medical staff records were found.",
+    "newTitle": "Register medical staff",
+    "editTitle": "Edit medical staff",
+    "detailTitle": "Medical staff detail",
+    "formSubtitle": "Complete the professional and operational staff information.",
+    "detailSubtitle": "Review the personal, professional and operational staff information.",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "documentNumber": "Document number",
+    "phone": "Phone",
+    "assignedDevice": "Assigned device",
     "save": "Save",
     "cancel": "Cancel",
     "confirm": "Confirm",
