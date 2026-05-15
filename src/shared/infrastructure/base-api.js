@@ -1,5 +1,4 @@
 import axios from "axios";
-//import {iamInterceptor} from "../../iam/infrastructure/iam.interceptor.js";
 
 const platformApi = import.meta.env.VITE_CORTISENSE_API_URL;
 
