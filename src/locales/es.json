@@ -3,6 +3,10 @@
     "brand": "CortiSense",
     "tagline": "Health Monitoring",
 
+    "welcomeBack": "Bienvenido de nuevo",
+    "loginHeroTitle": "Cuidamos a quienes cuidan.",
+    "loginHeroText": "Monitoreo biométrico inteligente y gestión de turnos para prevenir el agotamiento médico.",
+
     "signInTitle": "Bienvenido de nuevo",
     "signInSubtitle": "Inicia sesión para acceder a la plataforma CortiSense.",
     "createTitle": "Crear cuenta",
