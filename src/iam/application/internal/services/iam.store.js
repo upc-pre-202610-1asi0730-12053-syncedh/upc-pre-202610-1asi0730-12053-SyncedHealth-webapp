@@ -16,6 +16,9 @@ const useIamStore = defineStore('iam', () => {
     const errors = ref([]);
     const loading = ref(false);
 
+    const isDoctor = computed(() => currentUser.value?.role === 'medical_staff');
+    const isAdmin = computed(() => currentUser.value?.role === 'admin');
+
     const isAuthenticated = computed(() => !!currentUser.value);
     const role = computed(() => currentUser.value?.role || null);
 
@@ -163,7 +166,9 @@ const useIamStore = defineStore('iam', () => {
         signIn,
         completeRegistration,
         signOut,
-        getDefaultRouteByRole
+        getDefaultRouteByRole,
+        isDoctor,
+        isAdmin
     };
 });
 

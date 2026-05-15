@@ -1,8 +1,8 @@
+<script setup>
+import MetricsView from "../../../metrics/presentation/views/metrics-view.vue";
+</script>
 <template>
-  <main class="page">
-    <h1>Panel administrativo</h1>
-    <p>Gestión institucional, usuarios, roles, suscripción y reportes.</p>
-  </main>
+  <MetricsView />
 </template>
 
 <style scoped>

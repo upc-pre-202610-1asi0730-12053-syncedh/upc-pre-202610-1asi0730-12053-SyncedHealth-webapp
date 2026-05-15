@@ -1,13 +1,15 @@
 <script setup lang="js">
 import { ref, onMounted } from "vue";
-import { useIamStore } from "../../../iam/application/internal/services/iam.store.js";
+const { t } = useI18n();
 import { metricsStore } from "../../application/metrics.store.js";
-
+import useIamStore from "../../../iam/application/internal/services/iam.store.js";
 import StatCards from "../components/stat-cards.vue";
 import BiometricModules from "../components/biometric-modules.vue";
 import ActiveAlerts from "../components/active-alerts.vue";
 import CortisolReport from "../components/reports/cortisol-report.vue";
 import ShiftsTable from "../components/shifts/shifts-table.vue";
+import HrvReport from "../components/reports/hrv-report.vue";
+import {useI18n} from "vue-i18n";
 
 const iamStore = useIamStore();
 
@@ -46,13 +48,13 @@ onMounted(() => {
   <div v-if="iamStore.isDoctor" class="flex flex-column h-full">
     <div class="bg-white border-bottom-1 border-gray-200 shadow-1 flex p-3 z-1 gap-4 overflow-x-auto">
       <div @click="activeTab = 0" :class="['px-4 py-2 border-round cursor-pointer transition-colors transition-duration-200 flex align-items-center', activeTab === 0 ? 'bg-cyan-50 text-cyan-700 font-bold shadow-1' : 'text-gray-600 hover:bg-gray-100']">
-        <i class="pi pi-objects-column mr-2 text-xl"></i><span class="text-base">{{ $t('metrics.doctor_tabs.summary') }}</span>
+        <i class="pi pi-objects-column mr-2 text-xl"></i><span class="text-base">{{ t('metrics.doctor_tabs.summary') }}</span>
       </div>
       <div @click="activeTab = 1" :class="['px-4 py-2 border-round cursor-pointer transition-colors transition-duration-200 flex align-items-center', activeTab === 1 ? 'bg-cyan-50 text-cyan-700 font-bold shadow-1' : 'text-gray-600 hover:bg-gray-100']">
-        <i class="pi pi-chart-bar mr-2 text-xl"></i><span class="text-base">{{ $t('metrics.doctor_tabs.cortisol') }}</span>
+        <i class="pi pi-chart-bar mr-2 text-xl"></i><span class="text-base">{{ t('metrics.doctor_tabs.cortisol') }}</span>
       </div>
       <div @click="activeTab = 2" :class="['px-4 py-2 border-round cursor-pointer transition-colors transition-duration-200 flex align-items-center', activeTab === 2 ? 'bg-cyan-50 text-cyan-700 font-bold shadow-1' : 'text-gray-600 hover:bg-gray-100']">
-        <i class="pi pi-calendar mr-2 text-xl"></i><span class="text-base">{{ $t('metrics.doctor_tabs.shifts') }}</span>
+        <i class="pi pi-calendar mr-2 text-xl"></i><span class="text-base">{{ t('metrics.doctor_tabs.shifts') }}</span>
       </div>
     </div>
 
@@ -60,7 +62,7 @@ onMounted(() => {
       <div class="max-w-screen-xl mx-auto">
         <div class="mb-4">
           <h1 class="m-0 text-3xl font-bold text-gray-800">
-            {{ activeTab === 0 ? $t('metrics.titles.doctor_summary') : (activeTab === 1 ? $t('metrics.titles.doctor_cortisol') : $t('metrics.titles.doctor_shifts')) }}
+            {{ activeTab === 0 ? t('metrics.titles.doctor_summary') : (activeTab === 1 ? t('metrics.titles.doctor_cortisol') : t('metrics.titles.doctor_shifts')) }}
           </h1>
           <p class="text-gray-500 mt-2 text-sm">Monitor de Salud Ocupacional SyncedHealth</p>
         </div>
@@ -85,13 +87,13 @@ onMounted(() => {
 
     <div class="bg-white border-bottom-1 border-gray-200 shadow-1 flex p-3 z-1 gap-4 overflow-x-auto">
       <div @click="adminActiveTab = 0" :class="['px-4 py-2 border-round cursor-pointer transition-colors transition-duration-200 flex align-items-center', adminActiveTab === 0 ? 'bg-blue-50 text-blue-700 font-bold shadow-1' : 'text-gray-600 hover:bg-gray-100']">
-        <i class="pi pi-users mr-2 text-xl"></i><span class="text-base">{{ $t('metrics.admin_tabs.real_time') }}</span>
+        <i class="pi pi-users mr-2 text-xl"></i><span class="text-base">{{ t('metrics.admin_tabs.real_time') }}</span>
       </div>
       <div @click="adminActiveTab = 1" :class="['px-4 py-2 border-round cursor-pointer transition-colors transition-duration-200 flex align-items-center', adminActiveTab === 1 ? 'bg-blue-50 text-blue-700 font-bold shadow-1' : 'text-gray-600 hover:bg-gray-100']">
-        <i class="pi pi-chart-line mr-2 text-xl"></i><span class="text-base">{{ $t('metrics.admin_tabs.trends') }}</span>
+        <i class="pi pi-chart-line mr-2 text-xl"></i><span class="text-base">{{ t('metrics.admin_tabs.trends') }}</span>
       </div>
       <div @click="adminActiveTab = 2" :class="['px-4 py-2 border-round cursor-pointer transition-colors transition-duration-200 flex align-items-center', adminActiveTab === 2 ? 'bg-blue-50 text-blue-700 font-bold shadow-1' : 'text-gray-600 hover:bg-gray-100']">
-        <i class="pi pi-chart-pie mr-2 text-xl"></i><span class="text-base">{{ $t('metrics.admin_tabs.availability') }}</span>
+        <i class="pi pi-chart-pie mr-2 text-xl"></i><span class="text-base">{{ t('metrics.admin_tabs.availability') }}</span>
       </div>
     </div>
 
@@ -100,8 +102,8 @@ onMounted(() => {
 
         <div class="mb-4 flex justify-content-between align-items-center">
           <div>
-            <h1 class="m-0 text-3xl font-bold text-gray-800">{{ $t('metrics.titles.admin_dashboard') }}</h1>
-            <p class="text-gray-500 mt-2 text-sm">{{ $t('metrics.titles.admin_subtitle') }}</p>
+            <h1 class="m-0 text-3xl font-bold text-gray-800">{{ t('metrics.titles.admin_dashboard') }}</h1>
+            <p class="text-gray-500 mt-2 text-sm">{{ t('metrics.titles.admin_subtitle') }}</p>
           </div>
           <pv-badge value="MODO ADMINISTRADOR" severity="info" class="px-3 py-2"></pv-badge>
         </div>
@@ -161,7 +163,7 @@ onMounted(() => {
                     <pv-column header="Estado Clínico" headerStyle="font-weight: bold; font-size: 13px;">
                       <template #body="slotProps">
                             <span :class="['px-3 py-1 border-round-xl text-xs font-bold', getBadgeClass(slotProps.data.status)]">
-                                {{ $t('metrics.status.' + getTranslatedStatus(slotProps.data.status)) }}
+                                {{ t('metrics.status.' + getTranslatedStatus(slotProps.data.status)) }}
                             </span>
                       </template>
                     </pv-column>

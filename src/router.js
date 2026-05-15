@@ -39,7 +39,8 @@ const routes = [
                 meta: {
                     title: "Admin Dashboard"
                 }
-            }
+            },
+            ...billingRoutes,
         ]
     },
 
@@ -89,7 +90,6 @@ const routes = [
             title: "Unauthorized"
         }
     },
-    ...billingRoutes,
 
     {
         path: "/:pathMatch(.*)*",
