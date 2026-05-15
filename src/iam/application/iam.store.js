@@ -2,6 +2,7 @@ import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
 import { IamApi } from '../infrastructure/iam-api.js';
 import { UserAssembler } from '../infrastructure/user.assembler.js';
+import {User} from "../domain/model/user.entity.js";
 
 const iamApi = new IamApi();
 const SESSION_KEY = 'cortisense_session';
