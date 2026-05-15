@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
-import useIamStore from './iam/application/internal/services/iam.store.js';
+import useIamStore from './iam/application/iam.store.js';
 
 const { t } = useI18n();
 const store = useIamStore();

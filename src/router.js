@@ -28,12 +28,6 @@ import billingRoutes from "./subscription-and-plan-management/presentation/route
 const InvitationManagement = () =>
     import("./iam/presentation/views/invitation-management.vue");
 
-const Unauthorized = () =>
-    import("./shared/presentation/views/unauthorized.vue");
-
-const PageNotFound = () =>
-    import("./shared/presentation/views/page-not-found.vue");
-
 /**
  * CortiSense application routes.
  */
@@ -75,7 +69,6 @@ const routes = [
                 }
             },
             ...billingRoutes,
-            },
             {
                 path: "staff",
                 redirect: "/admin/staff/list",
