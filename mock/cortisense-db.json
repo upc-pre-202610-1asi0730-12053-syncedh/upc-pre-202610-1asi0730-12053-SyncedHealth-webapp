@@ -121,8 +121,8 @@
       "medicalStaffId": "yNv7a0d",
       "name": "PulseWatch X",
       "type": "smartwatch",
-      "syncStatus": "disconnected",
-      "lastSyncAt": "2026-05-14 17:07:31"
+      "syncStatus": "connected",
+      "lastSyncAt": "2026-05-14 18:55:32"
     },
     {
       "id": "md-1778791611002",
@@ -157,6 +157,86 @@
       "sleepHours": 6.1,
       "activityLevel": "high",
       "recordedAt": "2026-05-13 22:10"
+    },
+    {
+      "id": "bio-1778802918055-2-60",
+      "medicalStaffId": "2",
+      "heartRate": 99,
+      "sleepHours": 4.6,
+      "activityLevel": "high",
+      "recordedAt": "2026-05-14 18:55:18"
+    },
+    {
+      "id": "bio-1778802918106-NXfh06X-440",
+      "medicalStaffId": "NXfh06X",
+      "heartRate": 65,
+      "sleepHours": 6.3,
+      "activityLevel": "high",
+      "recordedAt": "2026-05-14 18:55:18"
+    },
+    {
+      "id": "bio-1778802918962-2-48",
+      "medicalStaffId": "2",
+      "heartRate": 90,
+      "sleepHours": 7.3,
+      "activityLevel": "low",
+      "recordedAt": "2026-05-14 18:55:18"
+    },
+    {
+      "id": "bio-1778802919020-NXfh06X-553",
+      "medicalStaffId": "NXfh06X",
+      "heartRate": 68,
+      "sleepHours": 7.7,
+      "activityLevel": "moderate",
+      "recordedAt": "2026-05-14 18:55:18"
+    },
+    {
+      "id": "bio-1778802921803-2-134",
+      "medicalStaffId": "2",
+      "heartRate": 98,
+      "sleepHours": 7,
+      "activityLevel": "moderate",
+      "recordedAt": "2026-05-14 18:55:21"
+    },
+    {
+      "id": "bio-1778802921838-NXfh06X-689",
+      "medicalStaffId": "NXfh06X",
+      "heartRate": 69,
+      "sleepHours": 5.3,
+      "activityLevel": "moderate",
+      "recordedAt": "2026-05-14 18:55:21"
+    },
+    {
+      "id": "bio-1778802922924-2-86",
+      "medicalStaffId": "2",
+      "heartRate": 72,
+      "sleepHours": 7.2,
+      "activityLevel": "high",
+      "recordedAt": "2026-05-14 18:55:22"
+    },
+    {
+      "id": "bio-1778802922967-NXfh06X-622",
+      "medicalStaffId": "NXfh06X",
+      "heartRate": 76,
+      "sleepHours": 6.1,
+      "activityLevel": "high",
+      "recordedAt": "2026-05-14 18:55:22"
+    },
+    {
+      "id": "bio-1778802926204-2-263",
+      "medicalStaffId": "2",
+      "heartRate": 102,
+      "sleepHours": 6,
+      "activityLevel": "moderate",
+      "recordedAt": "2026-05-14 18:55:26"
+    },
+    {
+      "id": "bio-1778802926256-NXfh06X-539",
+      "medicalStaffId": "NXfh06X",
+      "heartRate": 102,
+      "sleepHours": 7.2,
+      "activityLevel": "moderate",
+      "recordedAt": "2026-05-14 18:55:26"
     }
   ]
 }

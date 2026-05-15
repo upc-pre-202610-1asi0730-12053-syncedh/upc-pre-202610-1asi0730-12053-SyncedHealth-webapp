@@ -4,6 +4,7 @@ import { useRouter, useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import useIamStore from '../../application/internal/services/iam.store.js';
 import { SignInCommand } from '../../domain/model/commands/sign-in.command.js';
+import LanguageSwitcher from "../../../shared/presentation/components/language-switcher.vue";
 
 const { t } = useI18n();
 const router = useRouter();
@@ -62,6 +63,9 @@ async function handleSubmit() {
 
     <main class="auth-form-panel">
       <div class="auth-form-card">
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 1rem;">
+          <language-switcher />
+        </div>
         <div class="form-header">
           <h1>{{ t('auth.welcome_back') || 'Welcome back' }}</h1>
           <p class="text-muted">{{ t('auth.login_subtitle') || 'Enter your credentials to access your health monitor.' }}</p>

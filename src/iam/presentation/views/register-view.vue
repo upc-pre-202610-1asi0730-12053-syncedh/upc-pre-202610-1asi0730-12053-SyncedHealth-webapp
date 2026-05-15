@@ -83,7 +83,9 @@ async function handleSubmit() {
 
     <main class="auth-form-panel">
       <div class="auth-form-card">
-        <language-switcher />
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 1rem;">
+          <language-switcher />
+        </div>
         <div class="form-header">
           <h1>{{ t('register.create_account') || 'Create Account' }}</h1>
           <p class="text-muted">{{ t('register.subtitle') || 'Start monitoring your health and shifts today.' }}</p>
