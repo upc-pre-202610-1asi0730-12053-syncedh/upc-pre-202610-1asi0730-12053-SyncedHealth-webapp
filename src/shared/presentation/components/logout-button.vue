@@ -7,7 +7,7 @@
  */
 
 import { useRouter } from "vue-router";
-import useIamStore from "../../../iam/application/internal/services/iam.store.js";
+import useIamStore from "../../../iam/application/iam.store.js";
 
 const router = useRouter();
 const iamStore = useIamStore();

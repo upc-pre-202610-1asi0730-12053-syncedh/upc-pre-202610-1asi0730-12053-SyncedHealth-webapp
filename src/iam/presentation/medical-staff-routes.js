@@ -8,11 +8,12 @@ const MedicalStaffDetail = () =>
     import("./views/medical-staff-detail.vue");
 
 /**
- * Staff Management routes.
+ * Medical staff management routes.
  *
- * These routes belong to the Staff Management bounded context.
+ * These routes belong to the Identity & Access Management bounded context,
+ * because they manage institutional users, roles and staff profiles.
  */
-const staffManagementRoutes = [
+const medicalStaffRoutes = [
     {
         path: "list",
         name: "medical-staff-list",
@@ -51,4 +52,4 @@ const staffManagementRoutes = [
     }
 ];
 
-export default staffManagementRoutes;
+export default medicalStaffRoutes;

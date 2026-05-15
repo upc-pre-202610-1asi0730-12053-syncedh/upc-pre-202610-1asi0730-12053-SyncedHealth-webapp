@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import iamRoutes from "./iam/presentation/iam-routes.js";
-import staffManagementRoutes from "./staff-management/presentation/staff-management-routes.js";
+import medicalStaffRoutes from "./iam/presentation/medical-staff-routes.js";
 import { authenticationGuard } from "./iam/infrastructure/authentication.guard.js";
 
 const AdminDashboard = () =>
@@ -57,7 +57,7 @@ const routes = [
 
     {
         path: "/admin/staff",
-        children: staffManagementRoutes,
+        children: medicalStaffRoutes,
         meta: {
             title: "Staff Management",
             requiresAuth: true,
