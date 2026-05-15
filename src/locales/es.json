@@ -29,7 +29,6 @@
     "createSubtitle": "Completa tu registro para acceder al monitoreo y gestión de turnos.",
 
     "login": "Iniciar Sesión",
-    "register": "Crear Cuenta",
     "email": "Correo electrónico",
     "emailPlaceholder": "Correo electrónico",
     "password": "Contraseña",
@@ -117,7 +116,23 @@
     "medical": {
       "title": "Mi estado actual",
       "subtitle": "Consulta de fatiga, alertas personales y recomendaciones de descanso."
-    }
+    },
+    "title": "Panel",
+    "welcome": "Buen {time}, {name}",
+    "today_appointments": "Citas de Hoy",
+    "total_patients": "Total de Pacientes",
+    "pending_reports": "Informes Pendientes",
+    "recent_activity": "Actividad Reciente",
+    "staff_directory": "Directorio del personal",
+    "shift_rotation": "Rotación de turnos",
+    "health_analytics": "Análisis de salud",
+    "biometric_logs": "Registros biométricos",
+    "staff_management_tools": "Herramientas de gestión del personal",
+    "biometric_notifications": "Notificaciones biométricas",
+    "todays_shift_schedule": "Horario de turnos de hoy",
+    "morning": "Día",
+    "afternoon": "Tarde",
+    "evening": "Noche"
   },
   "staff": {
     "section": "Gestión de personal",
@@ -194,24 +209,6 @@
     "stats_patients": "Pacientes gestionados",
     "stats_doctors": "Médicos registrados",
     "stats_uptime": "Disponibilidad de plataforma"
-  },
-  "dashboard": {
-    "title": "Panel",
-    "welcome": "Buen {time}, {name}",
-    "today_appointments": "Citas de Hoy",
-    "total_patients": "Total de Pacientes",
-    "pending_reports": "Informes Pendientes",
-    "recent_activity": "Actividad Reciente",
-    "staff_directory": "Directorio del personal",
-    "shift_rotation": "Rotación de turnos",
-    "health_analytics": "Análisis de salud",
-    "biometric_logs": "Registros biométricos",
-    "staff_management_tools": "Herramientas de gestión del personal",
-    "biometric_notifications": "Notificaciones biométricas",
-    "todays_shift_schedule": "Horario de turnos de hoy",
-    "morning": "Día",
-    "afternoon": "Tarde",
-    "evening": "Noche"
   },
   "cra": {
     "deviceManagement": {
@@ -325,23 +322,27 @@
     "detailTitle": "Detalle del personal médico",
     "formSubtitle": "Completa la información profesional y operativa del personal.",
     "detailSubtitle": "Consulta la información personal, profesional y operativa del colaborador.",
-    "firstName": "Nombres",
-    "lastName": "Apellidos",
-    "documentNumber": "Documento",
-    "phone": "Teléfono",
-    "assignedDevice": "Dispositivo asignado",
     "save": "Guardar",
     "cancel": "Cancelar",
     "confirm": "Confirmar",
     "back": "Volver",
-    "or": "o"
+    "or": "o",
+    "logout": "Cerrar sesión",
+    "unauthorized": "Acceso no autorizado",
+    "pageNotFound": "Página no encontrada",
+    "goHome": "Ir al inicio",
+    "error": "Ocurrió un error.",
+    "success": "Operación realizada correctamente.",
+    "yes": "Sí",
+    "no": "No",
+    "close": "Cerrar"
   },
   "errors": {
     "not_found": "Página no encontrada",
     "not_found_desc": "La ruta {path} no existe.",
     "go_home": "Volver al Inicio",
     "unauthorized": "Acceso Restringido",
-    "unauthorized_desc": "No tienes permiso para ver esta página."
+    "unauthorized_desc": "No tienes permiso para ver esta página.",
     "created": "Personal médico registrado correctamente.",
     "updated": "Información del personal actualizada correctamente.",
     "removed": "Personal médico eliminado correctamente.",
@@ -409,18 +410,5 @@
     "myRecovery": "Consulta de recomendaciones de descanso y recuperación.",
     "myAlerts": "Consulta de alertas personales asociadas al estado de salud.",
     "myHistory": "Consulta del historial de fatiga y datos biométricos."
-  },
-  "common": {
-    "logout": "Cerrar sesión",
-    "unauthorized": "Acceso no autorizado",
-    "pageNotFound": "Página no encontrada",
-    "goHome": "Ir al inicio",
-    "loading": "Cargando...",
-    "error": "Ocurrió un error.",
-    "success": "Operación realizada correctamente.",
-    "yes": "Sí",
-    "no": "No",
-    "confirm": "Confirmar",
-    "close": "Cerrar"
   }
 }

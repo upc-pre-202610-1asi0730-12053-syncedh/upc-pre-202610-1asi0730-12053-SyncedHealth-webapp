@@ -2,7 +2,7 @@
 import { ref, onMounted } from "vue";
 const { t } = useI18n();
 import { metricsStore } from "../../application/metrics.store.js";
-import useIamStore from "../../../iam/application/internal/services/iam.store.js";
+import useIamStore from "../../../iam/application/iam.store.js";
 import StatCards from "../components/stat-cards.vue";
 import BiometricModules from "../components/biometric-modules.vue";
 import ActiveAlerts from "../components/active-alerts.vue";

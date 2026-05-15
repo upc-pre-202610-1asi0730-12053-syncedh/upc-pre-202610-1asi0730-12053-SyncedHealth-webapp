@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted } from 'vue';
 import { useI18n }   from 'vue-i18n';
-import useIamStore     from '../../../iam/application/internal/services/iam.store.js';
+import useIamStore     from '../../../iam/application/iam.store.js';
 import useBillingStore from '../../application/internal/services/billing.store.js';
 import { CreateCheckoutSessionCommand } from '../../domain/model/commands/create-checkout-session.command.js';
 import { CancelSubscriptionCommand }    from '../../domain/model/commands/cancel-subscription.command.js';

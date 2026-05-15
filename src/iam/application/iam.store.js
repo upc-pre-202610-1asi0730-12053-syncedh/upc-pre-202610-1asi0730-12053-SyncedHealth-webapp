@@ -4,7 +4,7 @@ import { IamApi } from '../infrastructure/iam-api.js';
 import { UserAssembler } from '../infrastructure/user.assembler.js';
 
 const iamApi = new IamApi();
-
+const SESSION_KEY = 'cortisense_session';
 /**
  * IAM application store.
  *
@@ -147,6 +147,13 @@ const useIamStore = defineStore('iam', () => {
         }
     }
 
+    function restoreSession() {
+        const raw = localStorage.getItem(SESSION_KEY);
+        if (raw) {
+            currentUser.value = new User(JSON.parse(raw));
+        }
+    }
+
     /**
      * Clears the authenticated user session.
      *
@@ -167,6 +174,7 @@ const useIamStore = defineStore('iam', () => {
         completeRegistration,
         signOut,
         getDefaultRouteByRole,
+        restoreSession,
         isDoctor,
         isAdmin
     };

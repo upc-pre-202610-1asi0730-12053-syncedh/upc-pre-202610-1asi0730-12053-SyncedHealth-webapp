@@ -2,7 +2,7 @@
 import { onMounted }  from 'vue';
 import { useRouter }  from 'vue-router';
 import { useI18n }    from 'vue-i18n';
-import useIamStore     from '../../../iam/application/internal/services/iam.store.js';
+import useIamStore     from '../../../iam/application/iam.store.js';
 import useBillingStore from '../../application/internal/services/billing.store.js';
 
 const { t }        = useI18n();
