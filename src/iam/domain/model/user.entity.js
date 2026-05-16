@@ -1,3 +1,5 @@
+import {toRaw} from "vue";
+
 /**
  * User entity within the Identity & Access Management bounded context.
  *
@@ -56,7 +58,7 @@ export class User {
     get id() { return this.#id; }
     get email() { return this.#email; }
     get password() { return this.#password; }
-    get role() { return this.#role; }
+    get role() { return toRaw(this).#role; }
     get status() { return this.#status; }
     get firstName() { return this.#firstName; }
     get lastName() { return this.#lastName; }

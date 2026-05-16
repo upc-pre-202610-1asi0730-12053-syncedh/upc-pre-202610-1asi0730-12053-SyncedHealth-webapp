@@ -3,6 +3,40 @@
     "name": "CortiSense",
     "tagline": "Stress Levels Control Platform"
   },
+  "metrics": {
+    "titles": {
+      "admin_dashboard": "Admin Dashboard",
+      "admin_subtitle": "Metrics overview"
+    },
+    "admin_tabs": {
+      "real_time": "Real Time",
+      "trends": "Trends",
+      "availability": "Availability"
+    },
+    "status": {
+      "critico": "Critical",
+      "advertencia": "Warning",
+      "estable": "Stable",
+      "historico": "History",
+      "veces_en_alerta": "Alert Count",
+      "tiempo_promedio_alerta": "Avg. Alert Duration",
+      "ultima_alerta": "Last Alert",
+      "estado": "Status",
+      "acciones": "Actions"
+    },
+    "hrv_report": {
+      "title": "HRV & Stress Report",
+      "subtitle": "Analysis of heart rate variability and workload metrics",
+      "export_pdf": "Export PDF",
+      "export_excel": "Export Excel",
+      "employee": "Employee",
+      "department": "Department",
+      "avg_stress": "Avg. Stress Level",
+      "max_stress": "Max Stress Level",
+      "recommendations": "Recommendations",
+      "view_details": "View Details"
+    }
+  },
   "nav": {
     "home": "Home",
     "dashboard": "Dashboard",
@@ -26,7 +60,11 @@
     "signInTitle": "Welcome back",
     "signInSubtitle": "Sign in to access the CortiSense platform.",
     "createTitle": "Create account",
+    "signingIn": "Signing In...",
     "createSubtitle": "Complete your registration to access monitoring and shift management.",
+
+    "registerHeroTitle": "Be part of the solution",
+    "registerHeroText": "Join CortiSense for intelligent clinical monitoring.",
 
     "login": "Sign In",
     "register": "Create Account",
@@ -193,6 +231,38 @@
       "password_mismatch": "Passwords do not match.",
       "name_required": "Name is required.",
       "role_required": "Please select a role."
+    },
+    "managementTitle": "Medical Staff Management",
+    "managementSubtitle": "Monitor medical staff availability, fatigue levels, and biometric device alignment.",
+    "totalStaff": "Total Staff",
+    "activeStaff": "Active Staff",
+    "riskStaffCount": "Staff at Risk",
+    "withoutDevice": "Without Device",
+    "searchExtended": "Search by name or email...",
+    "allAreas": "All Areas",
+    "allRoles": "All Roles",
+    "medicalStaff": "Medical Staff",
+    "clinicalSupervisor": "Clinical Supervisor",
+    "active": "Active",
+    "inactive": "Inactive",
+    "allRisks": "All Risks",
+    "low": "Low",
+    "moderate": "Moderate",
+    "high": "High",
+    "critical": "Critical",
+    "name": "Name",
+    "email": "Email",
+    "status": "Status",
+    "risk": "Risk Level",
+    "fatigue": "Fatigue Index",
+    "actions": "Actions",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "documentNumber": "Document Number",
+    "phone": "Phone Number",
+    "device": "Biometric Device",
+    "detail": {
+      "professionalInformation": "Professional Information"
     }
   },
   "home": {

@@ -3,6 +3,40 @@
     "name": "CortiSense",
     "tagline": "Plataforma de Control de Niveles de Estrés"
   },
+  "metrics": {
+    "titles": {
+      "admin_dashboard": "Tablero de Administración",
+      "admin_subtitle": "Resumen de métricas"
+    },
+    "admin_tabs": {
+      "real_time": "Tiempo Real",
+      "trends": "Tendencias",
+      "availability": "Disponibilidad"
+    },
+    "status": {
+      "critico": "Crítico",
+      "advertencia": "Advertencia",
+      "estable": "Estable",
+      "historico": "Historial",
+      "veces_en_alerta": "Veces en Alerta",
+      "tiempo_promedio_alerta": "Tiempo Promedio de Alerta",
+      "ultima_alerta": "Última Alerta",
+      "estado": "Estado",
+      "acciones": "Acciones"
+    },
+    "hrv_report": {
+      "title": "Reporte de HRV y Estrés",
+      "subtitle": "Análisis de variabilidad de frecuencia cardíaca y métricas de carga",
+      "export_pdf": "Exportar PDF",
+      "export_excel": "Exportar Excel",
+      "employee": "Empleado",
+      "department": "Departamento",
+      "avg_stress": "Nivel de Estrés Promedio",
+      "max_stress": "Nivel de Estrés Máximo",
+      "recommendations": "Recomendaciones",
+      "view_details": "Ver Detalles"
+    }
+  },
   "nav": {
     "home": "Inicio",
     "dashboard": "Panel",
@@ -20,13 +54,17 @@
     "tagline": "Health Monitoring",
 
     "welcomeBack": "Bienvenido de nuevo",
-    "loginHeroTitle": "Cuidamos a quienes cuidan.",
+    "loginHeroTitle": "Cuidamos a quienes cuidan",
     "loginHeroText": "Monitoreo biométrico inteligente y gestión de turnos para prevenir el agotamiento médico.",
 
     "signInTitle": "Bienvenido de nuevo",
     "signInSubtitle": "Inicia sesión para acceder a la plataforma CortiSense.",
+    "signingIn": "Iniciando sesión...",
     "createTitle": "Crear cuenta",
     "createSubtitle": "Completa tu registro para acceder al monitoreo y gestión de turnos.",
+    "create_account": "Crea tu cuenta de monitoreo",
+    "registerHeroTitle": "Sé parte de la solución",
+    "registerHeroText": "Únete a CortiSense para la supervisión clínica inteligente.",
 
     "login": "Iniciar Sesión",
     "email": "Correo electrónico",
@@ -193,6 +231,38 @@
       "password_mismatch": "Las contraseñas no coinciden.",
       "name_required": "El nombre es obligatorio.",
       "role_required": "Por favor selecciona un rol."
+    },
+    "managementTitle": "Gestión de Personal Médico",
+    "managementSubtitle": "Monitoree la disponibilidad del personal médico, niveles de fatiga y alineación de dispositivos biométricos.",
+    "totalStaff": "Personal Total",
+    "activeStaff": "Personal Activo",
+    "riskStaffCount": "Personal en Riesgo",
+    "withoutDevice": "Sin Dispositivo",
+    "searchExtended": "Buscar por nombre o correo...",
+    "allAreas": "Todas las Áreas",
+    "allRoles": "Todos los Roles",
+    "medicalStaff": "Personal Médico",
+    "clinicalSupervisor": "Supervisor Clínico",
+    "active": "Activo",
+    "inactive": "Inactivo",
+    "allRisks": "Todos los Riesgos",
+    "low": "Bajo",
+    "moderate": "Moderado",
+    "high": "Alto",
+    "critical": "Crítico",
+    "name": "Nombre",
+    "email": "Correo",
+    "status": "Estado",
+    "risk": "Nivel de Riesgo",
+    "fatigue": "Índice de Fatiga",
+    "actions": "Acciones",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "documentNumber": "Número de Documento",
+    "phone": "Teléfono",
+    "device": "Dispositivo Biométrico",
+    "detail": {
+      "professionalInformation": "Información Profesional"
     }
   },
   "home": {
