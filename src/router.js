@@ -20,6 +20,11 @@ const MedicalStaffStatus = () =>
 const PlaceholderPage = () =>
     import("./shared/presentation/views/placeholder-page.vue");
 
+const Unauthorized = () => import("./shared/presentation/views/unauthorized.vue");
+const PageNotFound = () => import("./shared/presentation/views/page-not-found.vue");
+// Layout
+
+import billingRoutes from "./subscription-and-plan-management/presentation/router/billing-routes.js";
 const InvitationManagement = () =>
     import("./iam/presentation/views/invitation-management.vue");
 
@@ -33,6 +38,7 @@ const PageNotFound = () =>
  * CortiSense application routes.
  */
 const routes = [
+    // RUTAS PÚBLICAS
     {
         path: "/",
         redirect: "/auth/sign-in"
@@ -67,6 +73,8 @@ const routes = [
                 meta: {
                     title: "Admin Dashboard"
                 }
+            },
+            ...billingRoutes,
             },
             {
                 path: "staff",
