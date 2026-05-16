@@ -10,7 +10,7 @@ const searchTerm = ref("");
 const selectedArea = ref("");
 const selectedRiskLevel = ref("");
 
-const apiUrl = import.meta.env.VITE_CORTISENSE_API_URL || "http://localhost:3000";
+const apiUrl = import.meta.env.VITE_CORTISENSE_API_URL;
 
 const AT_RISK_LEVELS = ["high", "critical"];
 
