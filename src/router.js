@@ -20,6 +20,12 @@ const MedicalStaffStatus = () =>
 const PlaceholderPage = () =>
     import("./shared/presentation/views/placeholder-page.vue");
 
+const SupervisorRiskStaff = () =>
+    import("./shared/presentation/views/supervisor-risk-staff.vue");
+
+const SupervisorClinicalAlerts = () =>
+    import("./shared/presentation/views/supervisor-clinical-alerts.vue");
+
 const Unauthorized = () => import("./shared/presentation/views/unauthorized.vue");
 const PageNotFound = () => import("./shared/presentation/views/page-not-found.vue");
 // Layout
@@ -148,21 +154,19 @@ const routes = [
             {
                 path: "risk-staff",
                 name: "supervisor-risk-staff",
-                component: PlaceholderPage,
+                component: SupervisorRiskStaff,
                 meta: {
                     title: "Staff at Risk",
-                    titleKey: "navigation.riskStaff",
-                    descriptionKey: "placeholder.riskStaff"
+                    titleKey: "navigation.riskStaff"
                 }
             },
             {
                 path: "alerts",
                 name: "supervisor-alerts",
-                component: PlaceholderPage,
+                component: SupervisorClinicalAlerts,
                 meta: {
                     title: "Clinical Alerts",
-                    titleKey: "navigation.clinicalAlerts",
-                    descriptionKey: "placeholder.clinicalAlerts"
+                    titleKey: "navigation.clinicalAlerts"
                 }
             },
             {

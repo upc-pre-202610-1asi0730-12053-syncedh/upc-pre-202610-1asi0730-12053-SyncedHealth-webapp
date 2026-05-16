@@ -172,6 +172,37 @@
     "afternoon": "Afternoon",
     "evening": "Evening"
   },
+  "supervisorRisk": {
+    "title": "Staff at Risk",
+    "subtitle": "Medical staff with high or critical fatigue levels requiring supervisor attention.",
+    "totalAtRisk": "Staff at risk",
+    "search": "Search by name, email or area...",
+    "allAtRiskLevels": "All at-risk levels",
+    "empty": "No staff members are currently at high or critical risk."
+  },
+  "supervisorAlerts": {
+    "title": "Clinical Alerts",
+    "subtitle": "Fatigue and stress alerts across monitored medical staff.",
+    "total": "Total alerts",
+    "pending": "Pending",
+    "escalated": "Escalated",
+    "critical": "Critical severity",
+    "filterAll": "All statuses",
+    "filterPending": "Pending",
+    "filterEscalated": "Escalated",
+    "filterAcknowledged": "Acknowledged",
+    "staff": "Staff member",
+    "type": "Type",
+    "message": "Message",
+    "severity": "Severity",
+    "status": "Status",
+    "createdAt": "Created",
+    "empty": "No clinical alerts were found.",
+    "unknownStaff": "Unknown staff",
+    "status_pending": "Pending",
+    "status_escalated": "Escalated",
+    "status_acknowledged": "Acknowledged"
+  },
   "staff": {
     "section": "Staff Management",
     "title": "Medical Staff",

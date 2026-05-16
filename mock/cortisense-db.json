@@ -154,6 +154,22 @@
       "riskLevel": "low",
       "fatigueLevel": 0,
       "assignedDeviceId": null
+    },
+    {
+      "id": "ms-005",
+      "firstName": "Rosa",
+      "lastName": "Vega",
+      "documentNumber": "70111223",
+      "email": "doctor.rosa@cortisense.com",
+      "workArea": "UCI",
+      "area": "UCI",
+      "specialty": "Medicina Intensiva",
+      "role": "medical_staff",
+      "staffRole": "medical_staff",
+      "status": "active",
+      "riskLevel": "critical",
+      "fatigueLevel": 88,
+      "assignedDeviceId": "dev-005"
     }
   ],
   "devices": [
@@ -161,9 +177,9 @@
       "id": "dev-001",
       "medicalStaffId": "ms-001",
       "deviceName": "CortiBand Pro",
-      "deviceType": "Smartwatch",
+      "deviceType": "Reloj inteligente",
       "serialNumber": "CBP-2026-001",
-      "syncStatus": "synced",
+      "syncStatus": "sincronizado",
       "batteryLevel": 84,
       "lastSyncAt": "2026-05-15T08:30:00"
     },
@@ -171,9 +187,9 @@
       "id": "dev-002",
       "medicalStaffId": "ms-002",
       "deviceName": "CortiBand Pro",
-      "deviceType": "Smartwatch",
+      "deviceType": "Reloj inteligente",
       "serialNumber": "CBP-2026-002",
-      "syncStatus": "synced",
+      "syncStatus": "sincronizado",
       "batteryLevel": 76,
       "lastSyncAt": "2026-05-15T08:45:00"
     },
@@ -181,9 +197,9 @@
       "id": "dev-003",
       "medicalStaffId": "ms-003",
       "deviceName": "CortiBand Lite",
-      "deviceType": "Smartwatch",
+      "deviceType": "Reloj inteligente",
       "serialNumber": "CBL-2026-003",
-      "syncStatus": "synced",
+      "syncStatus": "sincronizado",
       "batteryLevel": 91,
       "lastSyncAt": "2026-05-15T09:00:00"
     },
@@ -191,11 +207,21 @@
       "id": "dev-004",
       "medicalStaffId": "ms-004",
       "deviceName": "CortiBand Pro",
-      "deviceType": "Smartwatch",
+      "deviceType": "Reloj inteligente",
       "serialNumber": "CBP-2026-004",
-      "syncStatus": "delayed",
+      "syncStatus": "retrasado",
       "batteryLevel": 22,
       "lastSyncAt": "2026-05-15T06:20:00"
+    },
+    {
+      "id": "dev-005",
+      "medicalStaffId": "ms-005",
+      "deviceName": "CortiBand Pro",
+      "deviceType": "Reloj inteligente",
+      "serialNumber": "CBP-2026-005",
+      "syncStatus": "sincronizado",
+      "batteryLevel": 61,
+      "lastSyncAt": "2026-05-15T09:10:00"
     }
   ],
   "biometric_records": [
@@ -206,7 +232,7 @@
       "sleepHours": 5.2,
       "heartRate": 96,
       "steps": 4200,
-      "activityLevel": "moderate",
+      "activityLevel": "moderado",
       "cortisolLevel": 28.5,
       "stressLevel": 82,
       "fatigueScore": 78,
@@ -219,7 +245,7 @@
       "sleepHours": 6.1,
       "heartRate": 84,
       "steps": 3100,
-      "activityLevel": "moderate",
+      "activityLevel": "moderado",
       "cortisolLevel": 22.4,
       "stressLevel": 58,
       "fatigueScore": 54,
@@ -232,7 +258,7 @@
       "sleepHours": 7.3,
       "heartRate": 72,
       "steps": 2500,
-      "activityLevel": "low",
+      "activityLevel": "bajo",
       "cortisolLevel": 14.2,
       "stressLevel": 30,
       "fatigueScore": 28,
@@ -245,7 +271,7 @@
       "sleepHours": 3.8,
       "heartRate": 108,
       "steps": 6100,
-      "activityLevel": "high",
+      "activityLevel": "alto",
       "cortisolLevel": 35.7,
       "stressLevel": 94,
       "fatigueScore": 92,
@@ -256,8 +282,8 @@
     {
       "id": "al-001",
       "medicalStaffId": "ms-001",
-      "type": "High Fatigue",
-      "message": "High fatigue level detected after reduced sleep hours.",
+      "type": "Fatiga alta",
+      "message": "Se detectó un nivel alto de fatiga tras horas reducidas de sueño.",
       "severity": "high",
       "status": "pending",
       "isRead": false,
@@ -266,12 +292,53 @@
     {
       "id": "al-002",
       "medicalStaffId": "ms-004",
-      "type": "Critical Fatigue",
-      "message": "Critical fatigue and stress indicators detected.",
+      "type": "Fatiga crítica",
+      "message": "Se detectaron indicadores críticos de fatiga y estrés.",
       "severity": "critical",
       "status": "pending",
       "isRead": false,
       "createdAt": "2026-05-15T09:20:00"
+    },
+    {
+      "id": "al-003",
+      "medicalStaffId": "ms-001",
+      "type": "Fatiga escalada",
+      "message": "Alerta ignorada por más de 10 minutos. Se notificó al supervisor.",
+      "severity": "high",
+      "status": "escalated",
+      "isRead": true,
+      "escalatedAt": "2026-05-15T10:25:00",
+      "createdAt": "2026-05-15T10:15:00"
+    },
+    {
+      "id": "al-004",
+      "medicalStaffId": "ms-002",
+      "type": "Preventiva",
+      "message": "El cortisol muestra tendencia al alza antes del turno nocturno en UCI.",
+      "severity": "moderate",
+      "status": "pending",
+      "isRead": false,
+      "createdAt": "2026-05-15T11:00:00"
+    },
+    {
+      "id": "al-005",
+      "medicalStaffId": "ms-005",
+      "type": "Fatiga crítica",
+      "message": "El índice de resiliencia está por debajo del mínimo operativo en UCI.",
+      "severity": "critical",
+      "status": "pending",
+      "isRead": false,
+      "createdAt": "2026-05-15T11:30:00"
+    },
+    {
+      "id": "al-006",
+      "medicalStaffId": "ms-004",
+      "type": "Turno bloqueado",
+      "message": "Turno nocturno bloqueado por nivel crítico de fatiga.",
+      "severity": "critical",
+      "status": "acknowledged",
+      "isRead": true,
+      "createdAt": "2026-05-15T08:45:00"
     }
   ],
   "shifts": [
@@ -281,7 +348,7 @@
       "date": "2026-05-15",
       "startTime": "08:00",
       "endTime": "16:00",
-      "area": "Emergency",
+      "area": "Emergencia",
       "status": "active",
       "workloadLevel": "high",
       "isBlocked": false
@@ -292,18 +359,18 @@
       "date": "2026-05-15",
       "startTime": "20:00",
       "endTime": "04:00",
-      "area": "Surgery",
+      "area": "Cirugía",
       "status": "scheduled",
       "workloadLevel": "critical",
       "isBlocked": true,
-      "blockedReason": "Critical fatigue level detected"
+      "blockedReason": "Nivel crítico de fatiga detectado"
     }
   ],
   "recovery_plans": [
     {
       "id": "rp-001",
       "medicalStaffId": "ms-001",
-      "reason": "High fatigue level and reduced sleep hours",
+      "reason": "Nivel alto de fatiga y horas de sueño reducidas",
       "recommendedRestMinutes": 30,
       "status": "pending",
       "createdAt": "2026-05-15T10:15:00"
@@ -311,7 +378,7 @@
     {
       "id": "rp-002",
       "medicalStaffId": "ms-004",
-      "reason": "Critical fatigue level and high cortisol indicator",
+      "reason": "Nivel crítico de fatiga e indicador alto de cortisol",
       "recommendedRestMinutes": 60,
       "status": "issued",
       "createdAt": "2026-05-15T09:20:00"

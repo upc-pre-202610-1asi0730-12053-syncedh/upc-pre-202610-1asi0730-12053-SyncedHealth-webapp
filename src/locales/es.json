@@ -172,6 +172,37 @@
     "afternoon": "Tarde",
     "evening": "Noche"
   },
+  "supervisorRisk": {
+    "title": "Personal en riesgo",
+    "subtitle": "Personal médico con niveles de fatiga alto o crítico que requiere atención del supervisor.",
+    "totalAtRisk": "Personal en riesgo",
+    "search": "Buscar por nombre, correo o área...",
+    "allAtRiskLevels": "Todos los niveles en riesgo",
+    "empty": "No hay personal con riesgo alto o crítico en este momento."
+  },
+  "supervisorAlerts": {
+    "title": "Alertas clínicas",
+    "subtitle": "Alertas de fatiga y estrés del personal médico monitoreado.",
+    "total": "Total de alertas",
+    "pending": "Pendientes",
+    "escalated": "Escaladas",
+    "critical": "Severidad crítica",
+    "filterAll": "Todos los estados",
+    "filterPending": "Pendientes",
+    "filterEscalated": "Escaladas",
+    "filterAcknowledged": "Reconocidas",
+    "staff": "Personal",
+    "type": "Tipo",
+    "message": "Mensaje",
+    "severity": "Severidad",
+    "status": "Estado",
+    "createdAt": "Fecha",
+    "empty": "No se encontraron alertas clínicas.",
+    "unknownStaff": "Personal desconocido",
+    "status_pending": "Pendiente",
+    "status_escalated": "Escalada",
+    "status_acknowledged": "Reconocida"
+  },
   "staff": {
     "section": "Gestión de personal",
     "title": "Personal médico",
